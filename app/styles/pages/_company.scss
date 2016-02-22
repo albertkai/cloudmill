@@ -1,0 +1,484 @@
+#company.inner-wrap {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  @include flexbox();
+
+  >aside{
+
+    width: 16vw;
+    background: $gray-dark;
+    text-align: center;
+    padding: 0 2vw;
+    padding-top: 15vh;
+
+    h3{
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 24px;
+    }
+
+    p{
+      font-size: 12px;
+    }
+
+    .carousel{
+
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      text-align: center;
+      color: white;
+      margin-top: 5vh;
+
+      .carousel-cont{
+
+        width: 40px;
+        height: 80%;
+        background: rgba(255, 255, 255, .3);
+        margin: 2vh auto;
+
+      }
+
+    }
+
+  }
+
+  >section{
+
+    width: 84vw;
+    background: $gray-darker;
+    @include flexbox();
+
+    @media only screen and (max-width: $screen-md-max) {
+      background-image: url(../../images/bg.jpg);
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    >div {
+
+      width: 64vw;
+      overflow-y: scroll;
+
+      .content{
+
+        .heading, .intro{
+
+          @include flexbox();
+
+          >div{
+            &:nth-child(1){
+              position: relative;
+              width: 30%;
+            }
+            &:nth-child(2){
+              width: 70%;
+            }
+          }
+
+        }
+
+        .heading{
+
+          height: 20vh;
+
+          @include flexbox();
+
+          >div{
+
+            &:nth-child(1){
+
+              width: 100%;
+              @include flexbox();
+
+              >div{
+                padding-top: 3vw;
+                &:nth-child(1){
+                  width: 30%;
+                }
+                &:nth-child(2){
+                  width: 70%;
+                }
+              }
+              p{
+                text-transform: uppercase;
+                font-size: 16px;
+                letter-spacing: .5em;
+                font-family: $font-family-regular;
+                @extend .pull-right;
+                @include translate(0, 50%);
+              }
+              .logo{
+                margin-left: 7vw;
+              }
+
+            }
+
+            &:nth-child(2){
+              display: none;
+              padding-right: 3vw;
+              h3{
+                font-size: 18px;
+                margin-bottom: 2px;
+              }
+              p{
+                font-size: 13px;
+              }
+            }
+
+          }
+
+          @media only screen and (max-width: $screen-md-max) {
+
+            height: auto !important;
+            margin-bottom: 5vh;
+
+            .cloudmill{
+              width: 20vw;
+              height: 3vw;
+            }
+
+            >div{
+              width: 50% !important;
+              @include flex-direction(column);
+              &:nth-child(1){
+                border-right: 1px solid rgba(255, 255, 255, .5);
+                padding-left: 3vw;
+                >div{
+                  width: 100% !important;
+                  &:nth-child(1){
+                    @include order(2);
+                    p{
+                      float: left !important;
+                      letter-spacing: .5em;
+                      margin-bottom: 0;
+                      margin-top: 2vh;
+                      @include translate(0, 0);
+                    }
+                  }
+                  &:nth-child(2){
+                    @include order(1);
+                  }
+                }
+                .logo{
+                  margin-left: 0;
+                }
+              }
+              &:nth-child(2){
+                display: block;
+              }
+            }
+
+          }
+
+        }
+
+        .intro{
+          hr{
+            width: 70%;
+            margin: 8vh auto;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, .5);
+            @media only screen and (max-width: $screen-md-max) {
+              margin: 27px auto;
+            }
+          }
+          h2{
+            font-size: 55px;
+            font-family: $font-family-regular;
+            text-transform: uppercase;
+            line-height: 1;
+            @media only screen and (max-width: $screen-md-max) {
+              font-size: 24px;
+              line-height: 1.4;
+            }
+          }
+          h5{
+            font-size: 24px;
+            margin-top: 7vh;
+            @media only screen and (max-width: $screen-md-max) {
+              font-size: 16px;
+              line-height: 1.4;
+              margin-top: 2vh;
+            }
+          }
+          h2, h5{
+            padding-right: 15vw;
+            @media only screen and (max-width: $screen-md-max) {
+              padding-right: 22vw;
+            }
+            a{
+              color: $brand-primary;
+            }
+          }
+        }
+
+        .we-do{
+
+          >div{
+
+            &:nth-child(1){
+
+              @include flexbox();
+              @include align-items(center);
+              margin: 5vh 0;
+
+              hr{
+                width: 40%;
+                margin: 0 3vw;
+                border: 0;
+                border-top: 1px solid rgba(255, 255, 255, .5);
+                @media only screen and (max-width: $screen-md-max) {
+                  width: 30.3%;
+                }
+              }
+
+              span{
+
+                font-style: italic;
+
+                &:first-of-type{
+                  font-family: $font-family-accent;
+                  font-size: 100px;
+                  margin-right: 3vw;
+                  @media only screen and (max-width: $screen-md-max) {
+                    margin-right: 4vw;
+                    margin-left: 3vw;
+                  }
+                }
+
+                &:last-of-type{
+                  font-family: $font-family-base;
+                }
+
+              }
+
+            }
+
+            &:nth-child(2){
+
+              @include flexbox();
+
+              >div{
+                &:nth-child(1){
+                  position: relative;
+                  width: 30%;
+                }
+                &:nth-child(2){
+                  width: 70%;
+                  padding-right: 15%;
+                  @media only screen and (max-width: $screen-md-max) {
+                    padding-right: 10%;
+                  }
+                  h3{
+                    font-size: 34px;
+                    margin: 0;
+                    margin-bottom: 5vh;
+                  }
+                  p{
+                    font-size: 14px;
+                    text-align: justify;
+                  }
+                }
+              }
+
+              @media only screen and (max-width: $screen-md-max) {
+
+                >div{
+                  &:nth-child(1){
+                    width: 20%;
+                  }
+                  &:nth-child(2){
+                    width: 80%;
+                  }
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+        .bottom-info{
+
+          @include flexbox();
+
+          >div{
+
+            width: 50%;
+
+            @media only screen and (max-width: $screen-md-max) {
+
+              &:nth-child(1){
+                width: 33.3%;
+              }
+
+              &:nth-child(2){
+                width: 66.7%;
+              }
+
+            }
+
+          }
+
+          .hiring{
+            margin-top: 7vh;
+            padding-right: 40%;
+            div{
+              color: $brand-secondary;
+              font-size: 44px;
+              margin-bottom: 2.5vh;
+            }
+            p{
+              font-size: 12px;
+            }
+            a{
+              display: block;
+              color: $brand-primary;
+              font-size: 16px;
+              margin: 3vh 0 6vh 0;
+            }
+
+          }
+
+        }
+
+        .bottom-links{
+
+          @include flexbox();
+
+          height: 11.5vh;
+
+          >div{
+
+            width: 25%;
+
+            &:nth-child(1){
+              margin-left: 50%;
+            }
+
+            &:nth-child(2){
+              div{
+                float: right;
+              }
+            }
+
+            &:nth-child(3){
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: $screen-md-max) {
+
+            height: 9vh;
+
+            >div{
+
+              width: 33.3%;
+              padding-left: 3vw;
+
+              &:nth-child(1){
+                margin-left: 0;
+              }
+
+              &:nth-child(2){
+                div{
+                  float: left;
+                }
+              }
+
+              &:nth-child(3){
+                display: block;
+              }
+
+            }
+
+          }
+
+
+        }
+
+      }
+
+    }
+
+    >aside{
+
+      width: 20vw;
+      padding: 0 2.5vw;
+
+      h3{
+
+        margin: 0;
+
+      }
+
+      h4{
+        font-size: 14px;
+      }
+
+      h5{
+
+        margin-top: 0;
+
+      }
+
+      >div{
+
+        &:nth-child(1){
+
+          height: 90vh;
+          padding-top: 3vw;
+
+        }
+
+        &:nth-child(2){
+
+          height: 10vh;
+
+        }
+
+      }
+
+      .action{
+
+        margin-top: 10vh;
+
+        div{
+          font-size: 33px;
+          color: $brand-secondary;
+        }
+
+      }
+
+    }
+
+    @media only screen and (max-width: $screen-md-max) {
+      >div{
+        width: 100%;
+      }
+      >aside{
+        display: none;
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: $screen-md-max) {
+    >aside{
+      width: 25vw;
+    }
+    >section{
+      width: 75vw;
+    }
+  }
+
+
+}

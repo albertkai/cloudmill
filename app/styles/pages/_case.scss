@@ -1,0 +1,897 @@
+#case.inner-wrap {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  @include flexbox();
+
+  &._rendered{
+
+    > aside{
+
+      nav, .switcher, .lead, .price{
+        @include translate(0, 0);
+        opacity: 1;
+      }
+
+    }
+
+    >section{
+
+      .heading{
+
+        >div {
+
+          .line{
+            @include translate(0, 0);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .animate{
+    @include transition(opacity .8s ease, transform .8s ease);
+    opacity: 1;
+    @include transform(translate(0, 0) scale(1));
+    will-change: transform, opacity;
+  }
+
+  ._animate-from{
+    opacity: 0;
+    @include translate(0, 100px);
+  }
+
+  #laptop {
+
+    &._animate-from{
+      @include transform(translate(0, 0) scale(.8));
+    }
+
+  }
+
+  .line{
+    &._animate-from{
+      @include transform(translate(100px, 0));
+    }
+  }
+
+  > aside {
+
+    width: 20vw;
+    background: $gray-dark;
+    padding-top: 15vh;
+
+    .lead{
+      @include transition(all .8s ease);
+      @include translate(0, 50px);
+      @include transition-delay(.6s);
+      opacity: 0;
+    }
+
+    .price{
+      @include transition(all .8s ease);
+      @include translate(0, 50px);
+      @include transition-delay(.4s);
+      opacity: 0;
+    }
+
+    .switcher {
+
+      width: 100%;
+      height: 16vh;
+      background: $brand-primary;
+      color: white;
+      text-align: center;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      @include flex-wrap(wrap);
+      @include transition(all .8s ease);
+      @include translate(0, 50px);
+      @include transition-delay(.2s);
+      opacity: 0;
+
+      .arrow {
+
+        height: 30px;
+        width: 30px;
+        @include border-radius(50%);
+        @include transition(all .2s ease);
+        border: 2px solid white;
+        margin: 0px 10px;
+        display: inline-block;
+        background: transparent;
+        margin: 0px 1.5vw;
+        text-align: center;
+        font-size: 20px;
+        line-height: 22px;
+
+        &:hover {
+          background: white;
+          color: $brand-primary;
+        }
+
+      }
+
+      .count {
+
+        font-size: 2.5vw;
+        color: rgba(255, 255, 255, .5);
+        font-family: $font-family-accent;
+        font-style: italic;
+
+        &.huge {
+          font-size: 6vw;
+          color: white;
+          margin-left: -0.5vw;
+        }
+
+      }
+
+    }
+
+    nav {
+
+      padding: 0 2vw;
+      margin-top: 10vh;
+      margin-bottom: 7vh;
+      @include transition(all .8s ease);
+      @include translate(0, 50px);
+      opacity: 0;
+
+      a {
+        display: block;
+        font-size: 10px;
+        font-family: $font-family-header;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        margin-bottom: 20px;
+      }
+
+    }
+
+    .lead {
+      width: 100%;
+    }
+
+    .padding {
+      padding: 0 2vw;
+    }
+
+    .price {
+
+      margin: 4vh 0 3vh 0;
+
+      h4 {
+
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 5px;
+
+      }
+
+      h2 {
+
+        font-size: 24px;
+        margin: 0;
+        font-family: $font-family-header;
+
+        i {
+          font-size: 21px;
+        }
+
+      }
+    }
+
+  }
+
+  > section {
+
+    width: 80vw;
+    background: $gray-darker;
+    overflow-y: scroll;
+
+    .heading {
+
+      @include flexbox();
+
+      > div {
+
+        padding-top: 5vh;
+        padding-bottom: 3vh;
+        padding-left: 3vw;
+        padding-right: 3vw;
+
+        .line{
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background: rgba(255, 255, 255, .5);
+          @include transition(all 3s ease);
+          @include translate(0, -100%);
+        }
+
+        &:nth-child(1) {
+
+          width: 33.3%;
+
+          .logo {
+            display: none;
+          }
+
+          button {
+
+            @include flexbox();
+            border: 0;
+            background-color: transparent;
+            width: 100px;
+            font-family: $font-family-header;
+            font-size: 16px;
+            letter-spacing: .3em;
+
+            p, span, i {
+              @include transition(all .2s ease);
+            }
+
+            i {
+              color: white;
+              margin: 3px 10px 0 0;
+              font-size: 15px;
+            }
+
+            p {
+              margin: 0;
+              span{
+                display: block;
+              }
+              span:nth-child(2) {
+                position: relative;
+                left: 2px;
+              }
+            }
+
+            &:hover {
+
+              p, span, i {
+                color: $brand-primary;
+              }
+
+            }
+
+          }
+        }
+
+        &:nth-child(2) {
+
+          position: relative;
+          width: 66.7%;
+
+          .logo {
+            display: inline-block;
+          }
+
+          .contacts {
+            float: right;
+          }
+
+          h3, p {
+            margin: 0;
+          }
+
+        }
+
+      }
+
+      @media only screen and (max-width: $screen-md-max) {
+
+        > div {
+
+          padding-top: 2vh;
+          padding-bottom: 0;
+
+          &:nth-child(1) {
+            width: 50%;
+
+            .logo {
+              display: block;
+              margin-left: 3.7vw;
+              i {
+                position: relative;
+                left: -0.3vw;
+                width: 16vw;
+                height: 3vw;
+              }
+              span {
+                font-size: 12px;
+              }
+            }
+
+            button {
+              @include translate(0, 50%);
+            }
+
+          }
+
+          &:nth-child(2) {
+
+            width: 50%;
+
+            .logo {
+              display: none;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .case-cont {
+
+      padding-top: 10vh;
+      text-align: center;
+
+      .logo {
+
+        margin-bottom: 4vh;
+
+      }
+
+      h2 {
+        font-size: 120px;
+        font-family: $font-family-header;
+        text-transform: uppercase;
+        font-size: 8vw;
+        margin: 6vh 0 4vh 0;
+      }
+
+      > h3 {
+
+        margin: 12vh 0 6vh 0;
+
+      }
+
+      .main-desc {
+        font-size: 24px;
+        padding: 0 10vw;
+        margin-bottom: 16vh;
+        &._animate-from{
+          @include translate(0, 100%);
+          opacity: 0;
+        }
+      }
+
+      .line {
+
+        width: 1px;
+        background: rgba(255, 255, 255, .5);
+        height: 7vh;
+        margin: 5vh auto;
+
+        &.long {
+
+          height: 10vh;
+
+        }
+
+      }
+
+      .desc {
+        font-size: 18px;
+        padding: 0 20vw;
+        margin-bottom: 5vh;
+        > a {
+          color: $brand-primary;
+        }
+      }
+
+      .screens {
+        margin-bottom: -5vh;
+      }
+
+      .slider {
+
+        position: relative;
+        width: 100%;
+        height: 50vw;
+
+        ul {
+
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/casename/slider/1.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+
+          }
+
+        }
+
+        .switcher {
+
+          position: absolute;
+          right: 0;
+          top: 50%;
+          @include translate(0, -50%);
+          height: 15%;
+          width: 15%;
+          background: $brand-primary;
+          color: white;
+          text-align: center;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+          @include flex-wrap(wrap);
+
+          .arrow {
+
+            height: 18px;
+            width: 18px;
+            @include border-radius(50%);
+            @include transition(all .2s ease);
+            border: 1px solid white;
+            margin: 0px 10px;
+            display: inline-block;
+            background: transparent;
+            margin: 0px .8vw;
+            text-align: center;
+            font-size: 10px;
+            line-height: 12px;
+
+            &:hover {
+              background: white;
+              color: $brand-primary;
+            }
+
+          }
+
+          .count {
+
+            font-size: 1.5vw;
+            color: rgba(255, 255, 255, .5);
+            font-family: $font-family-accent;
+            font-style: italic;
+
+            &.huge {
+              font-size: 4vw;
+              color: white;
+              margin-left: -0.1vw;
+            }
+
+          }
+
+        }
+
+      }
+
+      .mac {
+
+        position: relative;
+        height: 41.1vw;
+        width: 60vw;
+        margin: 0 auto;
+        background-image: url(../images/casename/mac.png);
+        -webkit-background-size: contain;
+        background-size: contain;
+
+        > ul {
+
+          position: absolute;
+          width: 77.1%;
+          height: 70.3%;
+          left: 11.4%;
+          top: 6.5%;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../images/aton/mac/1.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+
+          }
+
+        }
+
+        .pins {
+
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          top: 76.8%;
+          height: 7.3%;
+          text-align: center;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+
+          > div {
+
+            width: 12px;
+            height: 12px;
+            @include border-radius(50%);
+            background: white;
+            margin: 0 3px;
+
+            &._active {
+              > div {
+                opacity: 1;
+              }
+            }
+
+            > div {
+
+              width: 6px;
+              height: 6px;
+              margin: 3px;
+              @include border-radius(50%);
+              background: $brand-primary;
+              opacity: 0;
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .total {
+
+        span {
+          display: block;
+          margin: 0;
+          &:nth-child(1), &:nth-child(3) {
+            font-size: 18px;
+          }
+          &:nth-child(2) {
+            font-size: 80px;
+            font-family: $font-family-header;
+            line-height: 90px;
+          }
+          &:nth-child(3) {
+            line-height: 3px;
+          }
+        }
+
+      }
+
+      .we-made {
+
+        @include flexbox();
+        @include flex-wrap(wrap);
+
+        > div {
+          position: relative;
+          width: 25%;
+          padding: 2vw 0 2vw 5vw;
+          text-align: left;
+
+          &:nth-child(2){
+            @include transition-delay(.2s)
+          }
+
+          &:nth-child(3){
+            @include transition-delay(.4s)
+          }
+
+          &:nth-child(4){
+            @include transition-delay(.6s)
+          }
+
+          h5 {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-family: $font-family-header;
+          }
+          p {
+            font-size: 12px;
+          }
+          > span {
+            position: absolute;
+            top: 0;
+            left: 3vw;
+            font-family: $font-family-accent;
+            font-style: italic;
+            font-size: 14px;
+          }
+          .platform {
+            @include flexbox();
+            span {
+              font-size: 33px;
+              padding-right: 1vw;
+            }
+          }
+          button {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        @media only screen and (max-width: $screen-md-max) {
+
+          > div {
+            width: 50%;
+            padding: 2vw 5vw 2vw 5vw;
+
+            > span {
+
+              left: 2vw;
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .price {
+
+        h5 {
+
+          font-size: 24px;
+          margin-bottom: 5px;
+
+        }
+
+        h3 {
+
+          font-size: 55px;
+          font-family: $font-family-header;
+          margin: 3vh 0 4vh 0;
+
+          i {
+            font-size: 48px;
+          }
+
+        }
+
+      }
+
+      .screens-skew {
+
+        margin-bottom: -8vh;
+
+      }
+
+      button.lead {
+        font-size: 24px;
+        padding: 1vw 2vw
+      }
+
+      .more {
+
+        padding: 2vw;
+        margin-bottom: 6vh;
+
+        .cont {
+
+          position: relative;
+          width: 100%;
+          @include flexbox();
+
+          > div {
+
+            position: relative;
+            width: 25%;
+            padding: 1vw;
+            cursor: pointer;
+
+            &:nth-child(2){
+              @include transition-delay(.2s)
+            }
+
+            &:nth-child(3){
+              @include transition-delay(.4s)
+            }
+
+            &:nth-child(4){
+              @include transition-delay(.6s)
+            }
+
+            > span {
+
+              position: absolute;
+              top: -0.5vw;
+              left: -0.5vw;
+              font-family: $font-family-accent;
+              font-style: italic;
+              font-size: 12px;
+              color: white;
+
+            }
+
+            > div {
+
+              position: relative;
+              overflow: hidden;
+              width: 17vw;
+              height: 17vw;
+              background: rgba(255, 255, 255, .2);
+              background-image: url(../images/casename/other.jpg);
+              -webkit-background-size: cover;
+              background-size: cover;
+              background-position: center center;
+
+              > div {
+
+                position: absolute;
+                width: 18vw;
+                height: 18vw;
+                padding: 1.5vw;
+                top: -0.5vw;
+                left: -0.5vw;
+                text-align: left;
+                background: $brand-primary;
+                color: white;
+                @include transition(all .4s ease);
+                @include translate(0, 110%);
+                opacity: 0;
+
+                h4 {
+                  font-size: 24px;
+                  margin-bottom: 0;
+                  text-transform: uppercase;
+                  font-family: $font-family-header;
+                }
+
+                span {
+                  font-size: 16px;
+                  font-family: $font-family-accent;
+                  font-style: italic;
+                  margin: 0;
+                }
+
+              }
+
+              &:hover {
+
+                > div {
+
+                  @include translate(0, 0);
+                  opacity: 1;
+
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+        @media only screen and (max-width: $screen-md-max) {
+
+          padding: 2.5vw;
+
+          > .cont {
+
+            @include flex-wrap(wrap);
+
+            > div {
+
+              width: 50%;
+              padding: 2.5vw;
+
+              span {
+                top: 0;
+                left: 0;
+              }
+
+              > div {
+                width: 31vw;
+                height: 31vw;
+                > div {
+                  top: 0;
+                  left: 0;
+                  width: 31vw;
+                  height: 31vw;
+                }
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .bottom-info {
+
+        @include flexbox();
+
+        > div {
+
+          &:nth-child(1) {
+            width: 33.3%;
+          }
+
+          &:nth-child(2) {
+
+            @include flexbox();
+            width: 66.7%;
+            border-left: 1px solid rgba(255, 255, 255, .5);
+            padding: 2.5vw 2vw;
+
+            > div {
+
+              position: relative;
+              width: 33.3%;
+              text-align: left;
+
+            }
+
+          }
+
+        }
+
+        @media only screen and (max-width: $screen-md-max) {
+
+          > div {
+
+            &:nth-child(1) {
+              display: none;
+            }
+
+            &:nth-child(2) {
+              width: 100%;
+              border-left: 0;
+              > div {
+                padding-left: 3vw;
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @media only screen and (max-width: $screen-md-max) {
+    > aside {
+      width: 25vw;
+    }
+    > section {
+      width: 75vw;
+    }
+  }
+
+}
