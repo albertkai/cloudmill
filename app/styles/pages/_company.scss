@@ -8,18 +8,68 @@
   overflow: hidden;
   @include flexbox();
 
+  .projects{
+    margin-bottom: 3vh;
+    span:nth-child(2){
+      top: 6px !important;
+      right: -20px !important;
+    }
+  }
+
+  .line{
+    position: absolute;
+    width: 1px;
+    height: 82%;
+    left: 3.2vw;
+    top: 0;
+    background: rgba(255, 255, 255, .5);
+    @include transition(all 3s ease);
+    @include translate(0, -100%);
+  }
+
+  .animated-text{
+    position: absolute;
+    font-size: 100px;
+    top: 450px;
+    left: 100px;
+    color: rgba(255, 255, 255, .05);
+    text-transform: uppercase;
+    font-family: $font-family-header;
+    line-height: 100px;
+    @include transition(all .5s ease);
+    z-index: 1;
+  }
+
+  hr{
+    @include transform(scaleX(0));
+    @include transition(all 3s ease);
+    @include transform-origin(left);
+    will-change: transform;
+  }
+
+  &._rendered{
+    hr{
+      @include transform(scaleX(1));
+    }
+    .line{
+      @include translate(0, 0);
+    }
+  }
+
   >aside{
 
+    position: relative;
     width: 16vw;
     background: $gray-dark;
     text-align: center;
     padding: 0 2vw;
     padding-top: 15vh;
+    z-index: 4;
 
     h3{
       margin-top: 0;
       margin-bottom: 18px;
-      font-size: 24px;
+      font-size: 2.8vh;
     }
 
     p{
@@ -33,14 +83,70 @@
       height: 40vh;
       text-align: center;
       color: white;
-      margin-top: 5vh;
+      margin-top: 8vh;
+
+      button{
+
+        position: absolute;
+        height: 30px;
+        line-height: 28px;
+        border: 0;
+        text-align: center;
+        background: transparent;
+        font-size: 23px;
+        color: white;
+        left: 50%;
+        @include translate(-50%, 0);
+
+        &:nth-child(1){
+
+          top: -28px;
+
+        }
+
+        &:nth-child(2){
+
+          bottom: -28px;
+
+        }
+
+      }
 
       .carousel-cont{
 
-        width: 40px;
-        height: 80%;
-        background: rgba(255, 255, 255, .3);
+        position: relative;
+        width: 10vh;
+        height: 36vh;
+        top: 2vh;
         margin: 2vh auto;
+        overflow: hidden;
+
+        >.items{
+
+          position: relative;
+          left: 0;
+          height: 300vh;
+          @include transition(all .4s ease);
+
+          .item{
+
+            width: 10vh;
+            height: 9vh;
+            -webkit-background-size: 55%;
+            background-size: 55%;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+          }
+
+        }
+
+      }
+
+      @media only screen and (max-width: $screen-md-max) {
+
+        visibility: visible;
+        opacity: 1;
 
       }
 
@@ -50,9 +156,18 @@
 
   >section{
 
+    position: relative;
     width: 84vw;
     background: $gray-darker;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-image: url(../../images/case_bg.jpg);
     @include flexbox();
+    z-index: 2;
+
+    >div{
+      z-index: 3;
+    }
 
     @media only screen and (max-width: $screen-md-max) {
       background-image: url(../../images/bg.jpg);
@@ -60,10 +175,21 @@
       background-size: cover;
     }
 
+    .dev-icons{
+      margin-top: 5vh;
+      span{
+        font-size: 3vh;
+      }
+      >span{
+        margin-right: 3vh;
+      }
+    }
+
     >div {
 
       width: 64vw;
-      overflow-y: scroll;
+      z-index: 3;
+      //overflow-y: hidden;
 
       .content{
 
@@ -77,6 +203,7 @@
               width: 30%;
             }
             &:nth-child(2){
+              position: relative;
               width: 70%;
             }
           }
@@ -102,6 +229,7 @@
                   width: 30%;
                 }
                 &:nth-child(2){
+                  position: relative;
                   width: 70%;
                 }
               }
@@ -190,7 +318,7 @@
           }
           h2{
             font-size: 55px;
-            font-family: $font-family-regular;
+            font-family: $font-family-header;
             text-transform: uppercase;
             line-height: 1;
             @media only screen and (max-width: $screen-md-max) {
@@ -228,17 +356,18 @@
               @include align-items(center);
               margin: 5vh 0;
 
-              hr{
+              >hr{
                 width: 40%;
                 margin: 0 3vw;
                 border: 0;
+                @include transition-delay(.4s);
                 border-top: 1px solid rgba(255, 255, 255, .5);
                 @media only screen and (max-width: $screen-md-max) {
                   width: 30.3%;
                 }
               }
 
-              span{
+              >span{
 
                 font-style: italic;
 
@@ -268,8 +397,11 @@
                 &:nth-child(1){
                   position: relative;
                   width: 30%;
+                  text-align: center;
+                  padding-top: 2vh;
                 }
                 &:nth-child(2){
+                  position: relative;
                   width: 70%;
                   padding-right: 15%;
                   @media only screen and (max-width: $screen-md-max) {
@@ -282,7 +414,7 @@
                   }
                   p{
                     font-size: 14px;
-                    text-align: justify;
+                    text-align: left;
                   }
                 }
               }
@@ -292,6 +424,10 @@
                 >div{
                   &:nth-child(1){
                     width: 20%;
+                    i{
+                      width: 50px;
+                      height: 50px;
+                    }
                   }
                   &:nth-child(2){
                     width: 80%;
@@ -309,9 +445,11 @@
         .bottom-info{
 
           @include flexbox();
+          margin-top: 5vh;
 
           >div{
 
+            position: relative;
             width: 50%;
 
             @media only screen and (max-width: $screen-md-max) {
@@ -328,9 +466,21 @@
 
           }
 
+          .v-line{
+            position: absolute;
+            top: 10%;
+            width: 1px;
+            height: 90%;
+            left: -40px;
+            background: rgba(255, 255, 255, .5);
+          }
+
           .hiring{
-            margin-top: 7vh;
+            margin-top: 10vh;
             padding-right: 40%;
+            .icon-brain{
+              font-size: 33px;
+            }
             div{
               color: $brand-secondary;
               font-size: 44px;
@@ -343,7 +493,7 @@
               display: block;
               color: $brand-primary;
               font-size: 16px;
-              margin: 3vh 0 6vh 0;
+              margin: 1vh 0 6vh 0;
             }
 
           }
@@ -356,8 +506,18 @@
 
           height: 11.5vh;
 
+          .v-line{
+            position: absolute;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            left: -40px;
+            background: rgba(255, 255, 255, .5);
+          }
+
           >div{
 
+            position: relative;
             width: 25%;
 
             &:nth-child(1){
@@ -366,7 +526,7 @@
 
             &:nth-child(2){
               div{
-                float: right;
+                margin-left: 3vw;
               }
             }
 
@@ -411,8 +571,10 @@
 
     >aside{
 
+      position: relative;
       width: 20vw;
       padding: 0 2.5vw;
+      z-index: 3;
 
       h3{
 
@@ -427,6 +589,10 @@
       h5{
 
         margin-top: 0;
+
+        i{
+          font-size: 18px;
+        }
 
       }
 
@@ -477,6 +643,10 @@
     }
     >section{
       width: 75vw;
+    }
+    .animated-text{
+      font-size: 50px;
+      line-height: 50px;
     }
   }
 

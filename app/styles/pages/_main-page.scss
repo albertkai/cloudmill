@@ -6,11 +6,87 @@
   height: 100vh;
   overflow: hidden;
 
-  .logo{
-    span{
-      color: white;
-      font-size: 12px;
+  .animate{
+    @include transition(all 1s ease);
+    &.animate-right{
+      @include translate(100px, 0);
+      opacity: 0;
     }
+    &.animate-down{
+      @include translate(0, 100px);
+      opacity: 0;
+    }
+    &.animate-scale{
+      opacity: 0;
+      @include scale(.8);
+    }
+    &.delay-1{
+      @include transition-delay(.2s);
+    }
+    &.delay-2{
+      @include transition-delay(.4s);
+    }
+    &.delay-3{
+      @include transition-delay(.6s);
+    }
+    &.delay-4{
+      @include transition-delay(.8s);
+    }
+    &._animated{
+      @include transform(translate(0, 0) scale(1));
+      opacity: 1;
+    }
+  }
+
+  .logo{
+
+    @include transition(all .6s ease);
+    @include transition-delay(0);
+    @include translate(0, -100px);
+    opacity: 0;
+
+    span{
+      position: relative;
+      left: 2px;
+      color: white;
+      font-size: .8vw;
+    }
+  }
+
+  .action{
+    div{
+      font-size: 33px;
+      color: $brand-secondary;
+    }
+    p{
+      padding-right: 2vw;
+    }
+  }
+
+  .action-bitrix{
+    div{
+      font-size: 43px;
+      margin-top: 14px;
+      margin-bottom: 21px;
+    }
+  }
+
+  &._rendered{
+
+    >.controls{
+
+      .switcher{
+        opacity: 1 !important;
+        @include scale(1);
+      }
+
+    }
+
+    .logo{
+      opacity: 1;
+      @include translate(0, 0);
+    }
+
   }
 
   @media only screen and (max-width: $screen-md-max) {
@@ -37,53 +113,48 @@
       height: 100%;
       top: 0;
       left: 0;
+      overflow: hidden;
 
-      ul{
-
+      .slider-cont{
         position: absolute;
-        width: 1000%;
+        width: 100%;
         height: 100%;
-        margin: 0;
-        padding: 0;
         top: 0;
         left: 0;
         overflow: hidden;
-        will-change: left;
-        list-style: none;
+        background: white;
         @include flexbox();
         @include transition(all .4s ease);
+        //perspective: 1200px;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+      }
 
-        li{
+      .slide{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: 100vh;
+        @include transform(translate3d(0, 0, 0));
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        top: 0;
+        left: 0;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
 
-          width: 50vw;
+        >div{
+          position: absolute;
+          width: 100%;
           height: 100%;
           top: 0;
           left: 0;
-          background-position: center center;
-          -webkit-background-size: cover;
-          background-size: cover;
-
+          background: rgba(black, .1);
         }
-
-      }
-
-      .clickarea{
-
-        position: absolute;
-        width: 25vw;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        cursor: w-resize;
-
-        &.right{
-
-          left: 25vw;
-          cursor: e-resize;
-
-        }
-
       }
 
     }
@@ -127,7 +198,11 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, .8);
+      background: -moz-linear-gradient(bottom, rgba(0,0,0,.9) 0%, rgba(0,0,0,.9) 51%, rgba(0,0,0,.8) 100%);
+      background: -webkit-linear-gradient(bottom, rgba(0,0,0,.9) 0%, rgba(0,0,0,.9) 51%, rgba(0,0,0,.8) 100%);
+      background: -o-linear-gradient(bottom, rgba(0,0,0,.9) 0%, rgba(0,0,0,.9) 51%, rgba(0,0,0,.8) 100%);
+      background: -ms-linear-gradient(bottom, rgba(0,0,0,.9) 0%, rgba(0,0,0,.9) 51%, rgba(0,0,0,.8) 100%);
+      background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.9) 51%, rgba(0,0,0,.8) 100%);
 
     }
 
@@ -264,6 +339,10 @@
 
           &:nth-child(3){
             height: 24vh;
+            @media only screen and (min-width: $screen-lg-min) {
+              top: -3vh;
+
+            }
           }
 
           &:nth-child(4){
@@ -481,45 +560,82 @@
         opacity: 0;
         visibility: hidden;
 
+        @media only screen and (min-width: $screen-lg-min) {
+          height: 17vh;
+        }
+
         hr{
 
+          position: relative;
+          top: 3vh;
           border: 0;
-          border-top: 1px solid rgba(255, 255, 255, .5);
-          width: 60%;
+          border-top: 1px solid rgba(255, 255, 255, .3);
+          width: 35%;
           margin: 0 auto;
+          display: none;
+
+          @media only screen and (min-width: $screen-lg-min) {
+            display: block;
+          }
+
+        }
+
+        button{
+
+          position: absolute;
+          height: 30px;
+          line-height: 28px;
+          top: 5.5vh;
+          border: 0;
+          background: transparent;
+          font-size: 23px;
+          color: white;
+
+          @media only screen and (min-width: $screen-lg-min) {
+            top: 7.5vh;
+          }
+
+          &.left{
+
+            left: 28px;
+
+          }
+
+          &.right{
+
+            right: 28px;
+
+          }
 
         }
 
         .carousel-cont{
 
           position: absolute;
-          width: 80%;
-          height: 30px;
+          width: 56vw;
+          height: 10vw;
           top: 50%;
           left: 50%;
           @include translate(-50%, -50%);
-          background: rgba(255 ,255, 255, .2);
           margin: 0 auto;
+          overflow: hidden;
 
-          button{
+          >.items{
 
-            position: absolute;
-            height: 30px;
-            line-height: 28px;
-            border: 0;
-            background: transparent;
-            font-size: 23px;
-            color: white;
+            position: relative;
+            left: 0;
+            width: 300vw;
+            @include transition(all .4s ease);
 
-            &:nth-child(1){
+            .item{
 
-              left: -28px;
-
-            }
-
-            &:nth-child(2){
-
-              right: -28px;
+              width: 14vw;
+              height: 10vw;
+              display: inline-block;
+              -webkit-background-size: 55%;
+              background-size: 55%;
+              background-position: center center;
+              background-repeat: no-repeat;
 
             }
 
@@ -531,6 +647,44 @@
 
           visibility: visible;
           opacity: 1;
+
+        }
+
+        @media only screen and (min-width: $screen-lg-min) {
+
+          visibility: visible;
+          opacity: 1;
+
+          top: 30vh;
+
+          button{
+
+            &:nth-child(1){
+
+              left: 50px;
+
+            }
+
+            &:nth-child(2){
+
+              right: 50px;
+
+            }
+
+          }
+
+
+          .carousel-cont{
+            width: 40vw;
+            height: 5vw;
+            .items{
+              .item{
+                height: 5vw;
+                width: 10vw;
+                background-size: 40%;
+              }
+            }
+          }
 
         }
 
@@ -586,7 +740,7 @@
 
         .text{
 
-          font-size: 6vh !important;
+          font-size: 6vh;
 
         }
 
@@ -608,7 +762,9 @@
       @include flexbox();
       @include align-items(center);
       @include flex-wrap(wrap);
-
+      @include transition(all .6s ease);
+      @include scale(.8);
+      opacity: 0;
       background-color: $brand-primary;
       color: white;
       padding-left: 1.5vw;
@@ -616,6 +772,7 @@
       .arrow{
         height: 30px;
         width: 30px;
+        @include flex-basis(30px);
         @include border-radius(50%);
         @include transition(all .2s ease);
         border: 2px solid white;
@@ -624,8 +781,22 @@
         background: transparent;
         margin: 0px 1.5vw;
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 22px;
+        padding: 0;
+        i{
+          position: relative;
+        }
+        &.left{
+          i{
+            left: -1px;
+          }
+        }
+        &.right{
+          i{
+            left: 1px;
+          }
+        }
         &:hover{
           background: white;
           color: $brand-primary;
@@ -652,11 +823,39 @@
         @include flex-grow(1);
         top: .6vh;
         margin-left: 1vw;
-        position: relative;
+        position: absolute;
+        top: 0;
         text-transform: uppercase;
         font-family: $font-family-header;
         font-size: 5vw;
+        line-height: 19vh;
         cursor: pointer;
+
+      }
+
+      .open-case{
+        border: 1px solid white;
+        color: white;
+        border-radius: 3px;
+        display: none;
+        margin-right: 3vw;
+        padding: 0 1vw;
+        line-height: 33px;
+        &:hover{
+          background: white;
+          color: $brand-primary;
+        }
+      }
+
+      @media only screen and (min-width: $screen-lg-min) {
+
+        .open-case{
+          display: block;
+        }
+
+        .text{
+          font-size: 4vw;
+        }
 
       }
 
@@ -793,14 +992,28 @@
   @include justify-content(space-around);
   @include align-items(center);
   @include transition(all, .2s, ease);
+  @include flex-wrap(wrap);
 
   &:hover{
     background: $brand-primary;
+    >div{
+      >div{
+        &:nth-child(1){
+          @include translate(0, -50%);
+        }
+        &:nth-child(3){
+          @include translate(0, 50%);
+        }
+      }
+    }
   }
 
   >div{
 
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
     height: 20px;
     width: 20px;
 
@@ -810,6 +1023,7 @@
       width: 100%;
       height: 4px;
       margin-bottom: 4px;
+      @include transition(all .4s ease);
 
       &:last-of-type{
         margin-bottom: 0;
@@ -852,6 +1066,8 @@
     }
 
     .close-menu{
+
+      background-color: $gray-darker;
 
       span{
 
@@ -912,7 +1128,7 @@
       font-size: 14px;
       font-family: $font-family-header;
       letter-spacing: .4em;
-      margin-bottom: 7px;
+      margin-bottom: 2vh;
     }
 
   }
@@ -975,6 +1191,7 @@
   .close-menu {
 
     @extend .menu-toggle;
+    background: transparent !important;
 
     span{
       display: block;
@@ -990,26 +1207,6 @@
       @include transition-delay(.8s);
     }
 
-  }
-
-}
-
-.loader{
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: white;
-  z-index: 9999;
-
-  div{
-    position: absolute;
-    height: 100%;
-    left: 0;
-    background: $brand-primary;
-    width: 33%;
   }
 
 }

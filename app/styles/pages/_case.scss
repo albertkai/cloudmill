@@ -8,6 +8,7 @@
   overflow: hidden;
   @include flexbox();
 
+
   &._rendered{
 
     > aside{
@@ -17,6 +18,19 @@
         opacity: 1;
       }
 
+    }
+
+    .case-loading{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .line{
+      -webkit-transform: translate(0, 0) !important;
+      -moz-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+      -o-transform: translate(0, 0) !important;
+      transform: translate(0, 0) !important;
     }
 
     >section{
@@ -35,6 +49,27 @@
 
     }
 
+    .case-wrap{
+
+      .case-cont{
+        visibility: visible;
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  .case-loading{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 7vw;
+    margin-top: 35vh;
+    opacity: 1;
+    visibility: visible;
+    font-family: $font-family-header;
+    @include transition(all .4s ease);
   }
 
   .animate{
@@ -44,12 +79,21 @@
     will-change: transform, opacity;
   }
 
+  .special-bg{
+    margin-bottom: -40vh;
+    margin-top: -18vh;
+    opacity: .5;
+  }
+
   ._animate-from{
     opacity: 0;
     @include translate(0, 100px);
   }
 
   #laptop {
+
+    position: relative;
+    z-index: 3;
 
     &._animate-from{
       @include transform(translate(0, 0) scale(.8));
@@ -70,17 +114,17 @@
     padding-top: 15vh;
 
     .lead{
-      @include transition(all .8s ease);
-      @include translate(0, 50px);
+      @include transition(trasform .8s ease, opacity .8s ease);
+      //@include translate(0, 50px);
       @include transition-delay(.6s);
-      opacity: 0;
+      //opacity: 0;
     }
 
     .price{
       @include transition(all .8s ease);
-      @include translate(0, 50px);
+      //@include translate(0, 50px);
       @include transition-delay(.4s);
-      opacity: 0;
+      //opacity: 0;
     }
 
     .switcher {
@@ -95,9 +139,9 @@
       @include justify-content(center);
       @include flex-wrap(wrap);
       @include transition(all .8s ease);
-      @include translate(0, 50px);
+      //@include translate(0, 50px);
       @include transition-delay(.2s);
-      opacity: 0;
+      //opacity: 0;
 
       .arrow {
 
@@ -111,9 +155,22 @@
         background: transparent;
         margin: 0px 1.5vw;
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 22px;
-
+        padding: 0;
+        i{
+          position: relative;
+        }
+        &.left{
+          i{
+            left: -1px;
+          }
+        }
+        &.right{
+          i{
+            left: 1px;
+          }
+        }
         &:hover {
           background: white;
           color: $brand-primary;
@@ -144,8 +201,8 @@
       margin-top: 10vh;
       margin-bottom: 7vh;
       @include transition(all .8s ease);
-      @include translate(0, 50px);
-      opacity: 0;
+      //@include translate(0, 50px);
+      //opacity: 0;
 
       a {
         display: block;
@@ -193,11 +250,241 @@
 
   }
 
-  > section {
+  .slider-3d{
+
+    position: relative;
+    width: 100%;
+
+    &.vertical{
+
+      margin-top: 20vh;
+
+      .slider-cont{
+
+        .slides{
+          height: 70vw;
+          >li{
+            width: 40vw;
+            height: 60vw;
+
+            &.prev{
+              @include transform(translate3d(-130%, -95%, -70px) scale(.35));
+            }
+
+            &.next{
+              @include transform(translate3d(30%, -95%, -70px) scale(.35));
+            }
+
+            &.second.prev {
+              @include transform(translate3d(-100%, -75%, -20px) scale(.6));
+            }
+
+            &.second.next{
+              @include transform(translate3d(0, -75%, -20px) scale(.6));
+            }
+
+            &.active{
+              @include transform(translate3d(-50%, -50%, 0) scale(1));
+              opacity: 1;
+              box-shadow: 0 0 50px rgba(#f04848, .5);
+              .index{
+                opacity: .7;
+                visibility: visible;
+              }
+            }
+
+            .index{
+              display: block;
+              font-size: 4vh;
+              line-height: 9vw;
+              left: -7vw;
+              top: -4vw;
+              opacity: 0;
+              @include transition(all .4s ease);
+              font-weight: bold;
+              position: absolute;
+              width: 10vw;
+              height: 10vw;
+              border: 5px solid #f04848;
+              color: #f04848;
+            }
+          }
+        }
+
+      }
+
+    }
+
+    .slider-cont{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      .switcher {
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        @include translate3d(0, -50%, 10px);
+        height: 15%;
+        width: 20%;
+        background: $brand-primary;
+        color: white;
+        text-align: center;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+        z-index: 1;
+
+        .arrow {
+
+          height: 18px;
+          width: 18px;
+          @include border-radius(50%);
+          @include transition(all .2s ease);
+          border: 1px solid white;
+          margin: 0px 10px;
+          display: inline-block;
+          background: transparent;
+          margin: 0px .8vw;
+          text-align: center;
+          font-size: 10px;
+          line-height: 12px;
+          cursor: pointer;
+
+          &:hover {
+            background: white;
+            color: $brand-primary;
+          }
+
+        }
+
+        .count {
+
+          font-size: 1.5vw;
+          color: rgba(255, 255, 255, .5);
+          font-family: $font-family-accent;
+          font-style: italic;
+
+          &.huge {
+            font-size: 4vw;
+            color: white;
+            margin-left: -0.1vw;
+          }
+
+        }
+
+      }
+
+      .slides{
+
+        position: relative;
+        width: 100%;
+        height: 50vw;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        @include transform(translateZ(5px));
+
+        >li{
+
+          position: absolute;
+          width: 55vw;
+          height: 37vw;
+          top: 50%;
+          left: 50%;
+          -webkit-background-size: cover;
+          background-size: cover;
+          background-position: center;
+          @include transition(all .4s ease);
+          @include transform-origin(center);
+
+
+          .pic{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+          }
+
+          .ovrl{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .3);
+            @include transition(all .4s ease);
+            opacity: 0;
+          }
+
+          .index{
+            display: none;
+          }
+
+          &.prev{
+            @include transform(translate3d(-110%, -50%, -50px) scale(.5));
+            opacity: 0;
+            .ovrl{
+              opacity: 1;
+            }
+            z-index: 1;
+          }
+
+          &.next{
+            @include transform(translate3d(10%, -50%, -50px) scale(.5));
+            opacity: 0;
+            .ovrl{
+              opacity: 1;
+            }
+            z-index: 1;
+          }
+
+          &.second.prev {
+            @include transform(translate3d(-100%, -50%, -20px) scale(.7));
+            opacity: 1;
+            .ovrl{
+              opacity: 1;
+            }
+            z-index: 5;
+          }
+
+          &.second.next{
+            @include transform(translate3d(0, -50%, -20px) scale(.7));
+            opacity: 1;
+            .ovrl{
+              opacity: 1;
+            }
+            z-index: 5;
+          }
+
+          &.active{
+            @include transform(translate3d(-50%, -50%, 0) scale(1));
+            opacity: 1;
+            z-index: 10;
+            .ovrl{
+              opacity: 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .case-wrap {
 
     width: 80vw;
-    background: $gray-darker;
-    overflow-y: scroll;
+    background: #27292a;
+    overflow-y: hidden;
 
     .heading {
 
@@ -234,7 +521,7 @@
             @include flexbox();
             border: 0;
             background-color: transparent;
-            width: 100px;
+            width: 180px;
             font-family: $font-family-header;
             font-size: 16px;
             letter-spacing: .3em;
@@ -258,6 +545,13 @@
                 position: relative;
                 left: 2px;
               }
+            }
+
+            @media only screen and (min-width: $screen-lg-min) {
+
+              font-size: 14px;
+              width: 150px;
+
             }
 
             &:hover {
@@ -312,12 +606,14 @@
                 height: 3vw;
               }
               span {
-                font-size: 12px;
+                font-size: .8vw;
               }
             }
 
             button {
               @include translate(0, 50%);
+              font-size: 14px;
+              width: 150px;
             }
 
           }
@@ -342,6 +638,9 @@
 
       padding-top: 10vh;
       text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      @include transition(all .4s ease);
 
       .logo {
 
@@ -350,11 +649,13 @@
       }
 
       h2 {
+        position: relative;
         font-size: 120px;
         font-family: $font-family-header;
         text-transform: uppercase;
         font-size: 8vw;
         margin: 6vh 0 4vh 0;
+        z-index: 4;
       }
 
       > h3 {
@@ -364,12 +665,18 @@
       }
 
       .main-desc {
+        position: relative;
+        z-index: 2;
         font-size: 24px;
         padding: 0 10vw;
         margin-bottom: 16vh;
         &._animate-from{
           @include translate(0, 100%);
           opacity: 0;
+        }
+        @media only screen and (max-width: $screen-md-max) {
+          font-size: 16px;
+          margin-bottom: 7vh;
         }
       }
 
@@ -389,6 +696,8 @@
       }
 
       .desc {
+        position: relative;
+        z-index: 5;
         font-size: 18px;
         padding: 0 20vw;
         margin-bottom: 5vh;
@@ -417,16 +726,22 @@
           margin: 0;
           padding: 0;
           list-style: none;
+          overflow: hidden;
 
           li {
 
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: url(../images/casename/slider/1.jpg);
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center center;
+            opacity: 0;
+            @include transition(all .4s ease);
+
+            &.active{
+              opacity: 1;
+            }
 
           }
 
@@ -462,6 +777,7 @@
             text-align: center;
             font-size: 10px;
             line-height: 12px;
+            cursor: pointer;
 
             &:hover {
               background: white;
@@ -495,7 +811,7 @@
         height: 41.1vw;
         width: 60vw;
         margin: 0 auto;
-        background-image: url(../images/casename/mac.png);
+        background-image: url(../images/mac.png);
         -webkit-background-size: contain;
         background-size: contain;
 
@@ -519,6 +835,12 @@
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center center;
+            opacity: 0;
+            @include transition(all .4s ease);
+
+            &.active{
+              opacity: 1;
+            }
 
           }
 
@@ -543,8 +865,9 @@
             @include border-radius(50%);
             background: white;
             margin: 0 3px;
+            cursor: pointer;
 
-            &._active {
+            &.active {
               > div {
                 opacity: 1;
               }
@@ -558,6 +881,152 @@
               @include border-radius(50%);
               background: $brand-primary;
               opacity: 0;
+              cursor: pointer;
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .ipad-slider {
+
+        position: relative;
+        height: 60vw;
+        width: 100%;
+        margin: 0 auto;
+        background-image: url(../images/ipad_bg.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: -12vh;
+        margin-bottom: -12vh;
+
+        .switcher {
+
+          position: absolute;
+          right: 0;
+          top: 50%;
+          @include translate(0, -50%);
+          height: 15%;
+          width: 20%;
+          background: $brand-primary;
+          color: white;
+          text-align: center;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+          @include flex-wrap(wrap);
+
+          .arrow {
+
+            height: 18px;
+            width: 18px;
+            @include border-radius(50%);
+            @include transition(all .2s ease);
+            border: 1px solid white;
+            margin: 0px 10px;
+            display: inline-block;
+            background: transparent;
+            margin: 0px .8vw;
+            text-align: center;
+            font-size: 10px;
+            line-height: 12px;
+            cursor: pointer;
+
+            &:hover {
+              background: white;
+              color: $brand-primary;
+            }
+
+          }
+
+          .count {
+
+            font-size: 1.5vw;
+            color: rgba(255, 255, 255, .5);
+            font-family: $font-family-accent;
+            font-style: italic;
+
+            &.huge {
+              font-size: 4vw;
+              color: white;
+              margin-left: -0.1vw;
+            }
+
+          }
+
+        }
+
+        > ul {
+
+          position: absolute;
+          width: 55.1%;
+          height: 55.2%;
+          left: 21.8%;
+          top: 22.4%;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../images/aton/mac/1.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0;
+            @include transition(all .4s ease);
+
+            &.active{
+              opacity: 1;
+            }
+
+          }
+
+        }
+
+        .pins {
+
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          top: 76.8%;
+          height: 7.3%;
+          text-align: center;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+
+          > div {
+
+            width: 12px;
+            height: 12px;
+            @include border-radius(50%);
+            background: white;
+            margin: 0 3px;
+            cursor: pointer;
+
+            &.active {
+              > div {
+                opacity: 1;
+              }
+            }
+
+            > div {
+
+              width: 6px;
+              height: 6px;
+              margin: 3px;
+              @include border-radius(50%);
+              background: $brand-primary;
+              opacity: 0;
+              cursor: pointer;
 
             }
 
@@ -628,6 +1097,9 @@
           }
           .platform {
             @include flexbox();
+            .icon-bitrix{
+              margin-bottom: 10px;
+            }
             span {
               font-size: 33px;
               padding-right: 1vw;
@@ -740,10 +1212,10 @@
               width: 17vw;
               height: 17vw;
               background: rgba(255, 255, 255, .2);
-              background-image: url(../images/casename/other.jpg);
               -webkit-background-size: cover;
               background-size: cover;
               background-position: center center;
+              cursor: pointer;
 
               > div {
 
@@ -759,6 +1231,7 @@
                 @include transition(all .4s ease);
                 @include translate(0, 110%);
                 opacity: 0;
+                cursor: pointer;
 
                 h4 {
                   font-size: 24px;

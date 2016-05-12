@@ -1,0 +1,202 @@
+.pt-page-rotateCubeTopOut {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation: rotateCubeTopOut .6s both ease-in;
+  animation: rotateCubeTopOut .6s both ease-in;
+}
+.pt-page-rotateCubeTopIn {
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: rotateCubeTopIn .6s both ease-in;
+  animation: rotateCubeTopIn .6s both ease-in;
+}
+.pt-page-rotateCubeBottomOut {
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: rotateCubeBottomOut .6s both ease-in;
+  animation: rotateCubeBottomOut .6s both ease-in;
+}
+.pt-page-rotateCubeBottomIn {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation: rotateCubeBottomIn .6s both ease-in;
+  animation: rotateCubeBottomIn .6s both ease-in;
+}
+
+@-webkit-keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+
+@-webkit-keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+
+@-webkit-keyframes rotateCubeTopOut {
+  0% { }
+  50% { -webkit-animation-timing-function: ease-out; -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg); }
+  100% { opacity: .3; -webkit-transform: translateY(-100%) rotateX(90deg); }
+}
+@keyframes rotateCubeTopOut {
+  0% {}
+  50% { -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg); transform: translateY(-50%) translateZ(-200px) rotateX(45deg); }
+  100% { opacity: .3; -webkit-transform: translateY(-100%) rotateX(90deg); transform: translateY(-100%) rotateX(90deg); }
+}
+
+@-webkit-keyframes rotateCubeTopIn {
+  0% { opacity: .3; -webkit-transform: translateY(100%) rotateX(-90deg); }
+  50% { -webkit-animation-timing-function: ease-out; -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg); }
+}
+@keyframes rotateCubeTopIn {
+  0% { opacity: .3; -webkit-transform: translateY(100%) rotateX(-90deg); transform: translateY(100%) rotateX(-90deg); }
+  50% { -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg); transform: translateY(50%) translateZ(-200px) rotateX(-45deg); }
+}
+
+@-webkit-keyframes rotateCubeBottomOut {
+  0% { }
+  50% { -webkit-animation-timing-function: ease-out; -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg); }
+  100% { opacity: .3; -webkit-transform: translateY(100%) rotateX(-90deg); }
+}
+@keyframes rotateCubeBottomOut {
+  0% { }
+  50% { -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg); transform: translateY(50%) translateZ(-200px) rotateX(-45deg); }
+  100% { opacity: .3; -webkit-transform: translateY(100%) rotateX(-90deg); transform: translateY(100%) rotateX(-90deg); }
+}
+
+@-webkit-keyframes rotateCubeBottomIn {
+  0% { opacity: .3; -webkit-transform: translateY(-100%) rotateX(90deg); }
+  50% { -webkit-animation-timing-function: ease-out; -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg); }
+}
+@keyframes rotateCubeBottomIn {
+  0% { opacity: .3; -webkit-transform: translateY(-100%) rotateX(90deg); transform: translateY(-100%) rotateX(90deg); }
+  50% { -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg); transform: translateY(-50%) translateZ(-200px) rotateX(45deg); }
+}
+
+
+
+.route-enter {
+  opacity: 0.01 !important;
+}
+
+.route-enter.route-enter-active {
+  opacity: 1 !important;
+  transition: all 800ms ease-in !important;
+}
+
+.route-leave {
+  opacity: 1 !important;
+}
+
+.route-leave.route-leave-active {
+  opacity: 0.01 !important;
+  transition: all 800ms ease-in !important;
+}
+
+
+.slide-enter {
+  //@include translate(100%, 0);
+  //z-index: 10 !important;
+}
+
+.slide-enter.slide-enter-active {
+  //transition: all 800ms ease-in !important;
+  //@include translate(0, 0)
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: moveFromLeft .6s ease-in-out both;
+  animation: moveFromLeft .6s ease-in-out both;
+  z-index: 10 !important;
+}
+
+.slide-leave {
+  opacity: 1 !important;
+  //@include translate(-100%, 0);
+  //transition: all 800ms ease-in !important;
+}
+
+.slide-leave.slide-leave-active {
+  //transition: all 800ms ease-in !important;
+  //@include translate(-200%, 0)
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation: moveToRight .6s both ease-in;
+  animation: moveToRight .6s both ease-in;
+}
+
+.text-enter {
+  opacity: 0.01 !important;
+  position: absolute !important;
+  top: 0 !important;
+  @include transition(-100%, 0);
+  z-index: 10 !important;
+
+}
+
+.text-enter.text-enter-active {
+  opacity: 1 !important;
+  transition: all 800ms ease-in !important;
+  position: absolute !important;
+  top: 0 !important;
+  z-index: 10 !important;
+}
+
+.text-leave {
+  opacity: 1 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  position: absolute !important;
+}
+
+.text-leave.text-leave-active {
+  opacity: 0.01 !important;
+  transition: all 800ms ease-in !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+}
+
+.item-enter {
+  opacity: 0.01 !important;
+  @include transform(rotateY(20deg));
+
+}
+
+.item-enter.item-enter-active {
+  opacity: 1 !important;
+  transition: all 500ms ease-in !important;
+  @include transform(rotateY(0deg));
+
+}
+
+.item-leave {
+  opacity: 1 !important;
+  top: 0;
+  left: 0;
+}
+
+.item-leave.item-leave-active {
+  opacity: 0.01 !important;
+  transition: all 500ms ease-in !important;
+  top: 0;
+  left: 0;
+  width: 0 !important;
+  will-change: width, transform;
+  @include transform(translate(0, 100%) rotateY(90deg));
+}

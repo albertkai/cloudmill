@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
+import RouteLink from './routeLink'
 
 export default class extends React.Component {
   constructor(props) {
@@ -8,6 +9,16 @@ export default class extends React.Component {
 
   _closeMenu() {
     $('body').find('#menu').removeClass('_opened')
+  }
+
+  goToFiltered(filter, e) {
+    e.preventDefault()
+    browserHistory.push('/portfolio')
+    this._closeMenu()
+    this.props.store.dispatch({
+      type: 'SET_FILTER',
+      filter: filter
+    })
   }
 
   render() {
@@ -20,26 +31,27 @@ export default class extends React.Component {
         <div className="cont">
           <section>
             <aside>
-              <h3><Link to="/portfolio">Портфолио</Link></h3>
+              <h3><RouteLink to="/portfolio" store={this.props.store}>Портфолио</RouteLink></h3>
               <hr/>
               <nav>
-                <a href="">Сайт</a>
-                <a href="">Брендинг</a>
-                <a href="">Визуализация</a>
+                <a href="#" onClick={this.goToFiltered.bind(this, 'WEB')}>Сайты</a>
+                <a href="#" onClick={this.goToFiltered.bind(this, 'BRANDING')}>Брендинг</a>
+                <a href="#" onClick={this.goToFiltered.bind(this, 'SEO')}>Продвижение</a>
+                <a href="#" onClick={this.goToFiltered.bind(this, 'VISUAL')}>Визуализация</a>
               </nav>
             </aside>
             <div>
-              <h3><Link to="/agency">Агентство</Link></h3>
+              <h3><RouteLink to="/agency" store={this.props.store}>Агентство</RouteLink></h3>
               <hr/>
-              <p>
-                Продуманный, трендовый коммерческий дизайн — это то, чему мы уделяем больше всего времени и сил.
+              <p style={{fontSize: '12px', lineHeight: 1.9}}>
+                Предлагаем полный цикл: продуманный коммерческий дизайн, сильная техническая база, эффективные рекламные кампании, сопровождение и развитие.
               </p>
             </div>
           </section>
           <section>
             <h2>Контакты</h2>
             <p>191015, Россия, Санкт-Петербург, Фуражный переулок д.3 литер К, офис 317</p>
-            <p className="huge">8 812 640 8022</p>
+            <p className="huge">8 812 425 67 17</p>
             <a href="mailto:info@cloudmill.ru">info@cloudmill.ru</a>
           </section>
         </div>

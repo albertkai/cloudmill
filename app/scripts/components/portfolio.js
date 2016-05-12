@@ -1,8 +1,22 @@
-import React from 'react';
-import ToggleMenu from './common/toggleMenu';
-import works from '../data/works';
-import { browserHistory } from 'react-router'
+import React from 'react'
+import ToggleMenu from './common/toggleMenu'
+import works from '../data/works'
+import { browserHistory, Link } from 'react-router'
+import FilterLink from './common/filterLink'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+
+function getText(text) {
+  if (text === 'web') {
+    return 'Разработка сайта'
+  } else if (text === 'visual') {
+    return 'Визуализация'
+  } else if (text === 'branding') {
+    return 'Брендинг'
+  } else if (text === 'seo') {
+    return 'Продвижение'
+  }
+}
 
 export default class extends React.Component {
 
@@ -15,12 +29,16 @@ export default class extends React.Component {
       max: 4,
       cssLeft: 0
     }
+    this.store = this.props.store
   }
 
   componentDidMount() {
 
+    $('title').text('Портфолио')
     $('#menu').removeClass('_opened')
-
+    this.unsubscribe = this.props.store.subscribe(()=>{
+      this.forceUpdate()
+    })
     setTimeout(()=>{
       $('.inner-wrap').addClass('_rendered')
     }, 500)
@@ -35,6 +53,19 @@ export default class extends React.Component {
       this._sliderRight()
     })
 
+  }
+
+  openModal() {
+    $('#modal').addClass('_opened')
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  componentWillUpdate() {
+    this.state.index = 0
+    this.state.cssLeft = 0
   }
 
   _sliderLeft() {
@@ -55,7 +86,7 @@ export default class extends React.Component {
   _sliderRight() {
 
     let curIndex = this.state.index
-    let length = this.state.works.length
+    let length = this.props.store.getState().filteredWorks.length
     let step = 16.7
     let newIndex = curIndex + 1
     if (newIndex + this.state.max <= length) {
@@ -102,30 +133,40 @@ export default class extends React.Component {
   }
 
   _formatNumber(number) {
+
     number = number + '';
     if (number.length === 1) {
       return '0' + number
     } else {
       return number
     }
+
   }
 
   _clickItem(alias) {
+
     $('.inner-wrap').removeClass('_rendered')
     browserHistory.push(`/portfolio/${ alias }`)
+
   }
 
   render() {
 
-    const Items = this.state.works.map((work, index)=>{
-      let image = `url(${work.slider[0]})`;
+    console.log('rerednering')
+    let works = this.props.store.getState().filteredWorks
+
+    const Items = works.map((work, index)=>{
+      let image = `url(images/${work.pic})`;
       return (
-        <div className="item" onClick={this._clickItem.bind(this, work.alias)} style={{backgroundImage: image}}>
+        <div className="item" key={work.alias} onClick={this._clickItem.bind(this, work.alias)}>
           <span>{this._formatNumber(index + 1)}</span>
-          <div style={{transitionDelay: index * 0.1 + 's'}}>
+          <div style={{
+            transitionDelay: index * 0.1 + 's',
+            backgroundImage: image
+            }}>
             <div>
               <h4>{work.name}</h4>
-              <span>{work.type}</span>
+              <span>{getText(work.type)}</span>
               <div></div>
             </div>
           </div>
@@ -142,16 +183,17 @@ export default class extends React.Component {
 
           <div className="padding">
             <p className="projects">
-              <span>59</span>
+              <span>98</span>
               <span>Проектов</span>
             </p>
           </div>
 
           <nav>
-            <a href="">Все проекты</a>
-            <a href="">Брендинг</a>
-            <a href="">Сайты</a>
-            <a href="">Визуализация</a>
+            <FilterLink store={this.store} filter="ALL">Все проекты</FilterLink>
+            <FilterLink store={this.store} filter="WEB">Сайты</FilterLink>
+            <FilterLink store={this.store} filter="BRANDING">Брендинг</FilterLink>
+            <FilterLink store={this.store} filter="SEO">Продвижение</FilterLink>
+            <FilterLink store={this.store} filter="VISUAL">Визуализация</FilterLink>
           </nav>
 
         </aside>
@@ -164,7 +206,7 @@ export default class extends React.Component {
             </div>
             <div>
               <div className="logo">
-                <a href="/"><i className="icons cloudmill"></i></a> <br/>
+                <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
                 <span>Интерактивное агентство</span>
               </div>
               <h2>Портфолио</h2>
@@ -172,7 +214,7 @@ export default class extends React.Component {
             </div>
             <div>
               <div>
-                <h3>8 812 640 8022</h3>
+                <h3>8 812 425 67 17</h3>
                 <p className="transparent">г. Санкт-Петербург</p>
               </div>
             </div>
@@ -183,7 +225,14 @@ export default class extends React.Component {
             <div>
 
               <div className="cont" onWheel={this._scroll.bind(this)} style={{left: this.state.cssLeft}}>
-                {Items}
+                <ReactCSSTransitionGroup
+                  component='div'
+                  transitionName="item"
+                  transitionEnterTimeout={500}
+                  transitionLeaveTimeout={500}
+                  >
+                  {Items}
+                </ReactCSSTransitionGroup>
               </div>
 
             </div>
@@ -192,14 +241,14 @@ export default class extends React.Component {
 
               <div className="action">
                 <div className="icon-file"></div>
-                <h4>Заполните бриф</h4>
-                <p className="transparent">Если вы уже слышали о нашем агентстве и хотите начать с нами работать</p>
+                <h4><a>Заполните бриф</a></h4>
+                <p className="transparent">Мы сможем предложить лучшее решение, с точной оценкой стоимости и сроков</p>
               </div>
 
               <div className="action">
-                <div className="icon-file"></div>
-                <h4>PDF-Презентация</h4>
-                <p className="transparent">Если вы уже слышали о нашем агентстве и хотите начать с нами работать</p>
+                <div className="icon-pdf"></div>
+                <h4><a>PDF-Презентация</a></h4>
+                <p className="transparent">Поможет Вам быстро ознакомиться с портфолио и начать работу с нами</p>
               </div>
 
             </div>
@@ -210,10 +259,10 @@ export default class extends React.Component {
             <div>
 
               <div>
-                <span className="icon-mouse"></span>
+                <span className="icon-mouse pull-right"></span>
               </div>
               <div>
-                <p>Используйте колесико мыши, чтобы прокручивать проекты</p>
+                <p className="use-mouse">Используйте колесико мыши, чтобы прокручивать проекты</p>
               </div>
 
             </div>
@@ -222,22 +271,23 @@ export default class extends React.Component {
               <div className="links">
                 <h5>Поделиться ссылкой</h5>
                 <div>
-                  <a><i className="fa fa-facebook"></i></a>
-                  <a><i className="fa fa-vk"></i></a>
-                  <a><i className="fa fa-twitter"></i></a>
+                  <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                  <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                  <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
                 </div>
               </div>
 
               <div>
                 <h5>Мы состоим в </h5>
+                <i className="icons specia"></i>
               </div>
 
               <div>
                 <h5>Поделиться ссылкой</h5>
                 <div>
-                  <a className="social-link"><i className="fa fa-facebook"></i></a>
-                  <a className="social-link"><i className="fa fa-vk"></i></a>
-                  <a className="social-link"><i className="fa fa-twitter"></i></a>
+                  <a className="social-link" href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                  <a className="social-link" href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                  <a className="social-link" href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
                 </div>
               </div>
 

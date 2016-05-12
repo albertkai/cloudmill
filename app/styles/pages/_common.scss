@@ -101,3 +101,395 @@ button{
   }
 
 }
+
+.route-overlay{
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .2);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all .4s ease);
+
+  &._visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+
+.loader{
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: white;
+  z-index: 9999;
+  opacity: 0;
+
+  &._visible{
+    opacity: 1;
+  }
+
+  div{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background: $brand-primary;
+    width: 33%;
+  }
+
+}
+
+.с-modal{
+
+  &._opened{
+    .modal-ovrl{
+      opacity: 1;
+      visibility: visible;
+    }
+    .cont{
+      @include translate(-50%, -50%);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .modal-ovrl{
+    z-index: 8000;
+    background: rgba(0, 0, 0, .8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all .4s ease);
+  }
+
+  .cont{
+
+    position: absolute;
+    background: $gray-dark;
+    width: 60vw;
+    min-height: 50vh;
+    padding: 3vh 10vw;
+    top: 50%;
+    left: 50%;
+    z-index: 8001;
+    @include translate(-50%, -250%);
+    @include transition(all .8s ease);
+    opacity: 0;
+    visibility: hidden;
+
+    input{
+      width: 50%;
+    }
+
+    textarea{
+      width: 100% !important;
+    }
+
+    .heading{
+
+      h3{
+        font-size: 24px;
+        font-family: $font-family-header;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        line-height: 1.4em;
+      }
+
+      .close-it{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 40px;
+        height: 40px;
+        @include transition(all .4s ease);
+        opacity: .7;
+        cursor: pointer;
+        &:hover{
+          opacity: 1;
+        }
+        >div{
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 40px;
+          height: 1px;
+          background: white;
+          &:nth-child(1){
+            @include rotate(-45deg);
+          }
+          &:nth-child(2){
+            @include rotate(45deg);
+          }
+        }
+      }
+
+    }
+
+    .form-group{
+
+      position: relative;
+
+      &.submit{
+        margin-top: 5vh;
+      }
+
+      input, textarea{
+        position: relative;
+        z-index: 1;
+        color: white;
+        &:focus{
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+
+      p{
+        position: absolute;
+        width: 50%;
+        z-index: 2;
+        line-height: 30px;
+        top: 28px;
+        padding-right: 12px;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        text-align: right;
+        color: $brand-secondary;
+      }
+
+      &._error{
+        input{
+          border: 1px solid $brand-secondary !important;
+        }
+        p{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.logo{
+  span{
+    position: relative;
+    font-size: .8vw;
+    left: 2px;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="email"], textarea {
+
+  background-color: #161718 !important;
+  border: 0 !important;
+  resize: none;
+  @include border-radius(3px);
+
+}
+
+label{
+  color: white;
+  font-family: $font-family-base;
+  font-size: 16px;
+}
+
+.initial-loader{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  @include transition(all 1s ease);
+  @include transition-delay(1s);
+  opacity: 0;
+  visibility: hidden;
+
+  .animate{
+    @include transition(all .4s ease);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &._visible{
+    opacity: 1;
+    visibility: visible;
+    >div:nth-child(1){
+      @include scaleX(1);
+    }
+    .animate{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  >div:nth-child(1){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #070f16;
+    @include transition(all 1s ease);
+    @include scaleX(.5);
+    @include transform-origin(right);
+  }
+
+  >div:nth-child(2){
+    .line{
+      position: absolute;
+      left: 12vw;
+      width: 1px;
+      height: 30vh;
+      background: rgba(255, 255, 255, .5);
+      @include scale(1, 0);
+      @include transition(all 4s ease);
+      &.top{
+        top: 0;
+        @include transform-origin(top);
+      }
+      &.bottom{
+        bottom: 0;
+        @include transform-origin(bottom);
+      }
+      &._animated{
+        @include scale(1, 1);
+      }
+    }
+    .prgrss{
+      position: absolute;
+      font-size: 20vh;
+      color: rgba(255 ,255, 255, .5);
+      font-family: $font-family-header;
+      top: 51%;
+      left: 5vw;
+      line-height: 18vh;
+      @include transition(all 6s ease-out);
+      @include translate(0, -50%);
+      opacity: 0.05;
+      >div{
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        height: 18vh;
+        >div{
+          position: relative;
+          @include transition(all 6s ease-out);
+          top: 0;
+          >div{
+            line-height: 18vh;
+          }
+        }
+      }
+    }
+  }
+
+  .half{
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+
+    .changer{
+
+      position: absolute;
+      top: 20vh;
+      left: -100px;
+      height: 26px;
+
+      img{
+        width: 10vw;
+      }
+
+      &._visible{
+        .line{
+          @include scale(1, 1);
+        }
+        .text{
+          >div{
+            >div:nth-child(2){
+              @include translate(100%, 0);
+            }
+          }
+        }
+      }
+
+      .line{
+        width: 200px;
+        height: 1px;
+        background: rgba(255, 255, 255, .5);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        @include transition(all 4s ease);
+        @include scale(0, 1);
+        @include transform-origin(left);
+      }
+
+      .text{
+        position: absolute;
+        left: 230px;
+        >div{
+          position: relative;
+          top: 0;
+          left: 0;
+          font-size: 22px;
+          margin-bottom: 2vh;
+          color: white;
+          overflow: hidden;
+          font-family: $font-family-base;
+          >div:nth-child(2){
+            position: absolute;
+            background: #070f16;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include transition(all 3s ease);
+          }
+          &:nth-child(1){
+            >div:nth-child(2){
+              @include transition-delay(0s);
+            }
+          }
+          &:nth-child(2){
+            >div:nth-child(2){
+              @include transition-delay(1s);
+            }
+          }
+          &:nth-child(3){
+            >div:nth-child(2){
+              @include transition-delay(2s);
+            }
+          }
+          &:nth-child(4){
+            >div:nth-child(2){
+              @include transition-delay(3s);
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
