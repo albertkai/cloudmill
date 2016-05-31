@@ -327,5 +327,70 @@ export default [
         marginBottom: '-10vh'
       }
     }
+  },
+  {
+    name: 'ВЕНЕТА СИСТЕМ',
+    alias: 'veneta',
+    type: 'web',
+    logo: 'veneta/logo.png',
+    price: '200 000',
+    shortDesc: 'Разработка корпоративного сайта, интеграция с ERP',
+    desc: 'На протяжении 15 лет бренд «ВЕНЕТА СИСТЕМ» является российским лидером в области восстановления картриджей для принтеров и копировально-множительной техники.',
+    pic: 'veneta/main_pic.jpg',
+    weMade: [
+      {
+        type: 'simple',
+        header: 'ИНТЕРАКТИВНЫЙ ПРОТОТИП',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+      },
+      {
+        type: 'website',
+        header: 'РАЗРАБОТАЛИ САЙТ',
+        platform: 'bitrix',
+        link: 'http://google.ru'
+      },
+      {
+        type: 'simple',
+        header: 'ЕЩЕ КОЕ ЧТО',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа'
+      },
+      {
+        type: 'simple',
+        header: 'И ПОСЛЕДНЕЕ',
+        text: 'Кучерявая тема входило разработка интерактивного прототипа'
+      }
+    ],
+    components: {
+      topPic: {
+        img: 'veneta/top_pic.png',
+        marginBottom: '-290px',
+        desc: ' Информационный слайдер подчеркивает ключевые моменты: масштаб предприятия, экологичность, эффективность, систему комплексного подхода к работе.'
+      },
+      imageTop: {
+        img: 'veneta/image1.jpg',
+        desc: 'Провели интеграцию с производственно-логистической системой управления «ВЕНЕТА СИСТЕМ», для подсчета эффективности использования и экономии на восстановлении картриджей.'
+      },
+      imageWithDesc: {
+        img: 'veneta/image2.jpg',
+        desc: ''
+      },
+      sliderFillWidth: {
+        items: [
+          'veneta/slider/1.jpg',
+          'veneta/slider/2.jpg',
+          'veneta/slider/3.jpg',
+          'veneta/slider/4.jpg',
+          'veneta/slider/5.jpg',
+          'veneta/slider/6.jpg'
+        ],
+        desc: '',
+        height: '25vw'
+      },
+      screens: {
+        desc: '',
+        pic: 'veneta/screens.jpg',
+        width: '100%'
+      }
+    }
   }
 ]

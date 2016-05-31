@@ -36,6 +36,26 @@ let Laptop = (img, line)=>{
   )
 }
 
+const topPic = (img, marginBottom, desc)=>{
+  return (
+    <div style={{marginBottom}}>
+      <img src={'images/' + img} className="animate" width="100%"/>
+      <div className="line animate"></div>
+      <p className="desc animate">{desc}</p>
+    </div>
+  )
+}
+
+const imageTop = (img, desc)=>{
+  return (
+    <div>
+      <img src={'images/' + img} className="animate" width="100%"/>
+      <div className="line"></div>
+      <p className="desc animate">{desc}</p>
+    </div>
+  )
+}
+
 const Screens = (img, desc, width, marginTop)=>{
   return (
     <div>
@@ -292,14 +312,15 @@ class SliderFullWidth extends React.Component {
       )
     })
 
-    let desc = this.state.desc
+    let desc = this.state.desc;
+    const height = this.props.height || '50vw';
 
     return (
       <div>
         {
           (desc !== null && desc !== undefined ? <p className="desc animate">{ desc }</p> : false)
         }
-        <div className="animate slider">
+        <div className="animate slider" style={{height}}>
           <ul>
             {items}
           </ul>
@@ -695,6 +716,10 @@ export default class extends React.Component {
 
             <p className="main-desc"> { work.desc } </p>
 
+            {work.components.topPic ? topPic( work.components.topPic.img, work.components.topPic.marginBottom, work.components.topPic.desc) : null}
+
+            {work.components.imageTop ? imageTop( work.components.imageTop.img, work.components.imageTop.desc) : null}
+
             {work.components.specialBg ? SpecialBg('images/' + work.components.specialBg.img, work.components.specialBg.shift, work.components.specialBg.top) : null}
 
             {work.components.laptop ? Laptop(work.components.laptop.img, work.components.laptop.line) : null}
@@ -703,7 +728,7 @@ export default class extends React.Component {
 
             {work.components.screens ? Screens(work.components.screens.pic, work.components.screens.desc, work.components.screens.width, work.components.screens.marginTop) : null}
 
-            {work.components.sliderFillWidth ? (<SliderFullWidth items={work.components.sliderFillWidth.items} desc={work.components.sliderFillWidth.desc}/>) : null}
+            {work.components.sliderFillWidth ? (<SliderFullWidth items={work.components.sliderFillWidth.items} height={work.components.sliderFillWidth.height} desc={work.components.sliderFillWidth.desc}/>) : null}
 
             {work.components.iPadSlider ? (<IPadSlider items={work.components.iPadSlider.pics} desc={work.components.iPadSlider.desc}/>) : null}
 
