@@ -5,6 +5,7 @@ import Menu from './common/menu'
 import Loader from './common/loader'
 import InitialLoader from './common/initialLoader'
 import Modal from './common/modal'
+import Success from './common/success'
 
 export default class extends React.Component {
   constructor(props) {
@@ -64,6 +65,7 @@ export default class extends React.Component {
         <Loader store={this.props.store}></Loader>
         <InitialLoader store={this.props.store}></InitialLoader>
         <Modal></Modal>
+        <Success></Success>
       </div>
     )
   }

@@ -147,6 +147,29 @@ button{
 
 }
 
+#success{
+  position: absolute;
+  background: $gray-dark;
+  padding: 7vw;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, 250%);
+  @include transition(all .8s ease);
+  z-index: 100;
+  &._opened{
+    @include translate(-50%, -50%);
+  }
+  h3{
+    margin-top: 0;
+    text-transform: uppercase;
+    font-family: $font-family-header;
+  }
+  p{
+    font-size: 18px;
+  }
+}
+
 .с-modal{
 
   &._opened{

@@ -41,6 +41,25 @@ export default class extends React.Component {
     })
     if ($form.find('._error').length === 0) {
       console.log('Submit form')
+      const name = $('#userName');
+      const email = $('#userEmail');
+      const phone = $('#userPhone');
+      const text = $('#userText');
+      $.post("../contact_me.php", {name, email, phone, text}, (data)=>{
+        $('#modal').removeClass('_opened');
+        $('#success').addClass('_opened');
+        setTimeout(()=>{
+          $('#success').removeClass('_opened');
+        }, 3000);
+      }, (err)=>{
+        console.log('error')
+        console.log(err)
+        $('#modal').removeClass('_opened');
+        $('#success').addClass('_opened');
+        setTimeout(()=>{
+          $('#success').removeClass('_opened');
+        }, 3000);
+      })
     }
   }
 
@@ -74,8 +93,8 @@ export default class extends React.Component {
                 <p onClick={this.removeError.bind(this)}>Поле не заполнено</p>
               </div>
               <div className="form-group">
-                <label htmlFor="userPhone">Комментарий:</label>
-                <textarea className="form-control" rows="5" id="userPhone" type="text"/>
+                <label htmlFor="userText">Комментарий:</label>
+                <textarea className="form-control" rows="5" id="userText" type="text"/>
               </div>
               <div className="form-group attach"></div>
               <div className="form-group submit">

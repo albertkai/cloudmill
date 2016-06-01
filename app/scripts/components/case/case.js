@@ -565,6 +565,10 @@ export default class extends React.Component {
     $('#modal').addClass('_opened')
   }
 
+  sendMessage() {
+
+  }
+
   slide(dir) {
     let work = this.state.work
     let filteredWorks = this.props.store.getState().filteredWorks
