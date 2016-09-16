@@ -22,7 +22,7 @@ export default class extends React.Component {
     let loadingClass = loaderState.isLoading ? '_visible' : ''
     return (
       <div>
-        //<div className={ loadingClass + ' route-overlay'}></div>
+        <div className={ loadingClass + ' route-overlay'}></div>
         <div className={ loadingClass + ' loader'}>
           <div style={{width: loaderState.progress + '%'}}></div>
         </div>

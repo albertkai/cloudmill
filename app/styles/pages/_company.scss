@@ -7,6 +7,7 @@
   left: 0;
   overflow: hidden;
   @include flexbox();
+  -webkit-overflow-scrolling: touch;
 
   .projects{
     margin-bottom: 3vh;
@@ -65,6 +66,10 @@
     padding: 0 2vw;
     padding-top: 15vh;
     z-index: 4;
+
+    @media only screen and (max-width: $screen-xs-max) {
+      display: none;
+    }
 
     h3{
       margin-top: 0;
@@ -164,6 +169,9 @@
     background-image: url(../../images/case_bg.jpg);
     @include flexbox();
     z-index: 2;
+    @media only screen and (max-width: $screen-xs-max) {
+      padding-top: 10vh;
+    }
 
     >div{
       z-index: 3;
@@ -205,6 +213,19 @@
             &:nth-child(2){
               position: relative;
               width: 70%;
+            }
+          }
+
+          @media only screen and (max-width: $screen-xs-max) {
+            >div{
+              &:nth-child(1){
+                position: relative;
+                width: 20%;
+              }
+              &:nth-child(2){
+                position: relative;
+                width: 80%;
+              }
             }
           }
 
@@ -266,6 +287,10 @@
             height: auto !important;
             margin-bottom: 5vh;
 
+            @media only screen and (max-width: $screen-md-max) {
+              margin-bottom: 1vh;
+            }
+
             .cloudmill{
               width: 20vw;
               height: 3vw;
@@ -277,6 +302,9 @@
               &:nth-child(1){
                 border-right: 1px solid rgba(255, 255, 255, .5);
                 padding-left: 3vw;
+                @media only screen and (max-width: $screen-md-max) {
+                  border-right: 0;
+                }
                 >div{
                   width: 100% !important;
                   &:nth-child(1){
@@ -287,6 +315,12 @@
                       margin-bottom: 0;
                       margin-top: 2vh;
                       @include translate(0, 0);
+                      @media only screen and (max-width: $screen-xs-max) {
+                        font-size: 12px;
+                        font-family: $font-family-header;
+                        letter-spacing: .3em;
+                        margin-left: 2vw;
+                      }
                     }
                   }
                   &:nth-child(2){
@@ -334,11 +368,17 @@
               line-height: 1.4;
               margin-top: 2vh;
             }
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 12px;
+            }
           }
           h2, h5{
             padding-right: 15vw;
             @media only screen and (max-width: $screen-md-max) {
               padding-right: 22vw;
+            }
+            @media only screen and (max-width: $screen-xs-max) {
+              padding-right: 10vh;
             }
             a{
               color: $brand-primary;
@@ -355,6 +395,10 @@
               @include flexbox();
               @include align-items(center);
               margin: 5vh 0;
+
+              @media only screen and (max-width: $screen-xs-max) {
+                margin: 3vh 0;
+              }
 
               >hr{
                 width: 40%;
@@ -375,6 +419,9 @@
                   font-family: $font-family-accent;
                   font-size: 100px;
                   margin-right: 3vw;
+                  @media only screen and (max-width: $screen-xs-max) {
+                    font-size: 60px;
+                  }
                   @media only screen and (max-width: $screen-md-max) {
                     margin-right: 4vw;
                     margin-left: 3vw;
@@ -383,6 +430,11 @@
 
                 &:last-of-type{
                   font-family: $font-family-base;
+                  @media only screen and (max-width: $screen-xs-max) {
+                    font-size: 12px;
+                    position: relative;
+                    top: 3px;
+                  }
                 }
 
               }
@@ -407,14 +459,25 @@
                   @media only screen and (max-width: $screen-md-max) {
                     padding-right: 10%;
                   }
+                  @media only screen and (max-width: $screen-xs-max) {
+                    padding-right: 20px;
+                  }
                   h3{
                     font-size: 34px;
                     margin: 0;
                     margin-bottom: 5vh;
+                    @media only screen and (max-width: $screen-xs-max) {
+                      font-size: 22px;
+                      margin-bottom: 3vh;
+                    }
                   }
                   p{
                     font-size: 14px;
                     text-align: left;
+                    @media only screen and (max-width: $screen-xs-max) {
+                      font-size: 13px;
+                      line-height: 1.6;
+                    }
                   }
                 }
               }
@@ -434,6 +497,17 @@
                   }
                 }
 
+              }
+
+              @media only screen and (max-width: $screen-xs-max) {
+                >div{
+                  &:nth-child(1){
+                    width: 25%;
+                  }
+                  &:nth-child(2){
+                    width: 75%;
+                  }
+                }
               }
 
             }
@@ -464,6 +538,18 @@
 
             }
 
+            @media only screen and (max-width: $screen-xs-max) {
+
+              &:nth-child(1){
+                width: 44%;
+              }
+
+              &:nth-child(2){
+                width: 56%;
+              }
+
+            }
+
           }
 
           .v-line{
@@ -473,13 +559,23 @@
             height: 90%;
             left: -40px;
             background: rgba(255, 255, 255, .5);
+            @media only screen and (max-width: $screen-md-max) {
+              top: 2%;
+            }
           }
 
           .hiring{
             margin-top: 10vh;
             padding-right: 40%;
+            @media only screen and (max-width: $screen-md-max) {
+              padding-right: 10%;
+              margin-top: 3vh;
+            }
             .icon-brain{
               font-size: 33px;
+              @media only screen and (max-width: $screen-md-max) {
+                font-size: 26px;
+              }
             }
             div{
               color: $brand-secondary;
@@ -488,12 +584,18 @@
             }
             p{
               font-size: 12px;
+              @media only screen and (max-width: $screen-md-max) {
+                font-size: 10px;
+              }
             }
             a{
               display: block;
               color: $brand-primary;
               font-size: 16px;
               margin: 1vh 0 6vh 0;
+              @media only screen and (max-width: $screen-md-max) {
+                font-size: 12px;
+              }
             }
 
           }
@@ -546,6 +648,7 @@
 
               &:nth-child(1){
                 margin-left: 0;
+                margin-top: 20px;
               }
 
               &:nth-child(2){
@@ -556,6 +659,65 @@
 
               &:nth-child(3){
                 display: block;
+              }
+
+            }
+
+          }
+
+          @media only screen and (max-width: $screen-xs-max) {
+
+            height: 33vh;
+            @include flex-wrap(wrap);
+
+            >div{
+
+              width: 100%;
+              padding-left: 3vw;
+              @include flex-grow(0);
+              @include flex-shrink(0);
+              margin-top: -7px;
+
+              h5{
+                font-size: 10px;
+              }
+
+              &:nth-child(1){
+                margin-left: 0;
+                text-align: center;
+                .links{
+                  a{
+                    margin: 5px 20px;
+                    font-size: 18px;
+                  }
+                }
+              }
+
+              &:nth-child(2){
+                width: 50%;
+                div{
+                  float: left;
+                }
+                i{
+                  width: 80px;
+                  margin-top: 10px;
+                }
+              }
+
+              &:nth-child(3){
+                width: 50%;
+                display: block;
+                text-align: right;
+                h5{
+                  padding-right: 20px;
+                }
+                >div{
+                  float: right;
+                  margin-right: 12px;
+                  a{
+                    margin-left: 8px;
+                  }
+                }
               }
 
             }
@@ -647,6 +809,12 @@
     .animated-text{
       font-size: 50px;
       line-height: 50px;
+    }
+  }
+
+  @media only screen and (max-width: $screen-xs-max) {
+    >section{
+      width: 100vw;
     }
   }
 

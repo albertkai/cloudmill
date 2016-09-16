@@ -2,7 +2,7 @@ import React from 'react';
 import ToggleMenu from './../common/toggleMenu';
 import works from '../../data/works';
 import Slider from './slider';
-import Response from 'response.js'
+import 'response.js/response.min.js';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { browserHistory, Link } from 'react-router';
 
@@ -27,6 +27,8 @@ class Carousel extends React.Component {
     let step = (()=>{
       if (width > 960) {
         return 10;
+      } else if (width < 500) {
+        return 28;
       } else {
         return 14;
       }
@@ -106,6 +108,13 @@ export default class extends React.Component {
       $('.main-wrap').addClass('_rendered')
       $('.animate').addClass('_animated')
     }, loadingTimeout)
+    $(window).on('resize', ()=>{
+      this.calcHeaderSize();
+    });
+  }
+
+  componentWillUnmount() {
+    $(window).off('resize');
   }
 
   componentDidUpdate() {
@@ -162,7 +171,7 @@ export default class extends React.Component {
       <div id="index" className="main-wrap">
         <aside>
 
-          <ToggleMenu></ToggleMenu>
+          <ToggleMenu className="hidden-xs"></ToggleMenu>
 
           <div className="slider">
             <ReactCSSTransitionGroup
@@ -190,8 +199,8 @@ export default class extends React.Component {
             <section>
 
 
-              <div></div>
-              <div>
+              <div className="hidden-xs"></div>
+              <div className="hidden-xs">
 
                 <div className="logo">
                   <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
@@ -199,7 +208,7 @@ export default class extends React.Component {
                 </div>
 
               </div>
-              <div>
+              <div className="hidden-xs">
                 <div>
                   <div className="text sizing">
                     <p>a</p>
@@ -217,8 +226,8 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div></div>
-              <div>
+              <div className="hidden-xs"></div>
+              <div className="ratings">
                 <div className="animate animate-scale">
                   <div className="place">
                     <span>4</span><span>место</span>
@@ -244,7 +253,7 @@ export default class extends React.Component {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="hidden-xs">
                 <div className="animate animate-down">
                   <h5>Мы в социальных сетях</h5>
                   <div className="links">
@@ -261,7 +270,7 @@ export default class extends React.Component {
 
             </section>
 
-            <aside>
+            <aside className="hidden-xs">
 
               <div></div>
 
@@ -306,6 +315,34 @@ export default class extends React.Component {
 
             <Carousel></Carousel>
 
+            <div className="bottom-links hidden-sm hidden-md hidden-lg">
+              <div>
+                <h5>Мы в социальных сетях</h5>
+                <div className="v-line"></div>
+                <div className="links">
+                  <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                  <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                  <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h5>Мы состоим в </h5>
+                  <i className="icons specia"></i>
+                </div>
+              </div>
+              <div>
+                <h5>Поделиться ссылкой</h5>
+
+                <div>
+                  <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                  <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                  <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </section>
@@ -336,7 +373,7 @@ export default class extends React.Component {
 
         </section>
 
-        <section className={ this.state.works[this.state.currentSlide].type + ' lines' }>
+        <section className={ this.state.works[this.state.currentSlide].type + ' lines hidden-xs' }>
 
           <div>
             <div>

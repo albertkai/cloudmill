@@ -8,6 +8,7 @@ import NProgress from 'nprogress'
 import ScrollMagic from 'scrollmagic'
 import {TweenMax} from 'gsap-react-plugin'
 import spinner from '../common/spinner'
+import 'response.js/response.min.js'
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -37,8 +38,9 @@ let Laptop = (img, line)=>{
 }
 
 const topPic = (img, marginBottom, desc)=>{
+  let marginBottomProcessed = Response.deviceW() > 500 ? marginBottom : 0;
   return (
-    <div style={{marginBottom}}>
+    <div style={{marginBottomProcessed}}>
       <img src={'images/' + img} className="animate" width="100%"/>
       <div className="line animate"></div>
       <p className="desc animate">{desc}</p>
@@ -521,19 +523,21 @@ export default class extends React.Component {
       offset: $(window).height() / 2
     });
 
-    var size;
-    let text = $('#case-title').text()
-    let resizer = $('#hidden-resizer')
-    let containerWidth = $('.case-cont').width()
-    resizer.html(text)
-    console.log(text)
-    while(resizer.width() > containerWidth) {
-      size = parseInt(resizer.css("font-size"), 10);
-      console.log(size)
-      resizer.css("font-size", size - 1);
-    }
-    $('#case-title').css('font-size', size + 'px')
+    if (Response.deviceW() > 500) {
+      var size;
+      let text = $('#case-title').text()
+      let resizer = $('#hidden-resizer')
+      let containerWidth = $('.case-cont').width()
+      resizer.html(text)
+      console.log(text)
+      while(resizer.width() > containerWidth) {
+        size = parseInt(resizer.css("font-size"), 10);
+        console.log(size)
+        resizer.css("font-size", size - 1);
+      }
+      $('#case-title').css('font-size', size + 'px')
 
+    }
   }
 
   componentWillUpdate() {
@@ -673,7 +677,7 @@ export default class extends React.Component {
 
             <div>
 
-              <div className="logo">
+              <div className="logo hidden-xs">
                 <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
                 <span>Интерактивное агентство</span>
               </div>
@@ -687,7 +691,7 @@ export default class extends React.Component {
               </button>
 
             </div>
-            <div>
+            <div className="hidden-xs">
 
               <div className="line animate"></div>
 
@@ -764,29 +768,30 @@ export default class extends React.Component {
 
             </div>
 
-            <div className="bottom-info">
+            <div className="bottom-links">
 
-              <div></div>
+              <div>
+                <h5>Мы в социальных сетях</h5>
+                <div className="v-line"></div>
+                <div className="links">
+                  <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                  <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                  <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+                </div>
+              </div>
               <div>
                 <div>
-                  <h5>Мы в социальных сетях</h5>
-                  <div className="links">
-                    <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
-                    <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
-                    <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
-                  </div>
-                </div>
-                <div>
-                  <h5>Мы состоим в</h5>
+                  <h5>Мы состоим в </h5>
                   <i className="icons specia"></i>
                 </div>
+              </div>
+              <div>
+                <h5>Поделиться ссылкой</h5>
+
                 <div>
-                  <h5>Поделиться ссылкой</h5>
-                  <div className="links">
-                    <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
-                    <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
-                    <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
-                  </div>
+                  <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                  <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                  <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
                 </div>
               </div>
 

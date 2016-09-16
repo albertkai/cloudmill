@@ -4,6 +4,8 @@ import works from '../data/works'
 import { browserHistory, Link } from 'react-router'
 import FilterLink from './common/filterLink'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import 'response.js/response.min.js'
+import IScroll from 'iscroll'
 
 
 function getText(text) {
@@ -53,6 +55,13 @@ export default class extends React.Component {
       this._sliderRight()
     })
 
+    //const myScroll = new IScroll('#portfolio', {
+    //  mouseWheel: true,
+    //  scrollbars: true
+    //});
+
+    console.log(Response);
+
   }
 
   openModal() {
@@ -101,33 +110,35 @@ export default class extends React.Component {
 
   _scroll(event) {
 
-    let delta = event.deltaY + ''
-    console.log(event.deltaMode)
-    let direction = (function(){
-      if (delta !== '0') {
-        return delta.search('-') >= 0 ? 'down' : 'up'
+    if (Response.deviceW() > 500) {
+      let delta = event.deltaY + ''
+      console.log(event.deltaMode)
+      let direction = (function(){
+        if (delta !== '0') {
+          return delta.search('-') >= 0 ? 'down' : 'up'
+        }
+      })()
+      let transitionTime = 500
+
+      let _move = (dir)=>{
+        if (dir === 'up') {
+          this._sliderLeft()
+        } else if (dir === 'down') {
+          this._sliderRight()
+        }
       }
-    })()
-    let transitionTime = 500
 
-    let _move = (dir)=>{
-      if (dir === 'up') {
-        this._sliderLeft()
-      } else if (dir === 'down') {
-        this._sliderRight()
+      if (!this.state.isScrolling) {
+
+        this.setState({isScrolling: true})
+
+        setTimeout(()=>{
+          this.setState({isScrolling: false})
+        }, transitionTime)
+
+        _move(direction)
+
       }
-    }
-
-    if (!this.state.isScrolling) {
-
-      this.setState({isScrolling: true})
-
-      setTimeout(()=>{
-        this.setState({isScrolling: false})
-      }, transitionTime)
-
-      _move(direction)
-
     }
 
   }
@@ -200,7 +211,7 @@ export default class extends React.Component {
 
         <section>
 
-          <section>
+          <section className="hidden-xs">
             <div>
               <h2>Портфолио</h2>
             </div>
@@ -232,6 +243,33 @@ export default class extends React.Component {
                   transitionLeaveTimeout={500}
                   >
                   {Items}
+                  <div className="bottom-links hidden-sm hidden-md hidden-lg">
+                    <div>
+                      <h5>Мы в социальных сетях</h5>
+                      <div className="v-line"></div>
+                      <div className="links">
+                        <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                        <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                        <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <h5>Мы состоим в </h5>
+                        <i className="icons specia"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <h5>Поделиться ссылкой</h5>
+
+                      <div>
+                        <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                        <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                        <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
+                      </div>
+                    </div>
+
+                  </div>
                 </ReactCSSTransitionGroup>
               </div>
 

@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 
   .animate{
     @include transition(all 1s ease);
@@ -89,15 +90,56 @@
 
   }
 
-  @media only screen and (max-width: $screen-md-max) {
+  @media only screen and (max-width: $screen-sm-max) {
+
+    @include flex-direction(column);
+    height: auto;
 
     >aside{
       width: 30vw !important;
+      height: 100vh;
     }
 
     >.info{
+      position: absolute !important;
+      right: 0;
       width: 70vw !important;
+      height: 100vh;
     }
+
+  }
+
+  @media only screen and (max-width: $screen-xs-max) {
+
+    >aside{
+      width: 100vw !important;
+      height: 100vh;
+
+      .slider{
+
+        .slider-cont {
+          .slide{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+    }
+
+    >.info{
+      width: 100vw !important;
+    }
+
+  }
+
+  @media only screen and (max-width: $screen-xs-max) {
+
+    display: block !important;
+    height: 100vh;
+    overflow-y: visible;
+    overflow-x: hidden;
+    @include translate3d(0, 0, 0);
 
   }
 
@@ -161,6 +203,135 @@
 
   }
 
+  .bottom-links{
+
+    @include flexbox();
+
+    height: 11.5vh;
+
+    .v-line{
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      left: -40px;
+      background: rgba(255, 255, 255, .5);
+    }
+
+    >div{
+
+      position: relative;
+      width: 25%;
+
+      &:nth-child(1){
+        margin-left: 50%;
+      }
+
+      &:nth-child(2){
+        div{
+          margin-left: 3vw;
+        }
+      }
+
+      &:nth-child(3){
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: $screen-md-max) {
+
+      height: 9vh;
+
+      >div{
+
+        width: 33.3%;
+        padding-left: 3vw;
+
+        &:nth-child(1){
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        &:nth-child(2){
+          div{
+            float: left;
+          }
+        }
+
+        &:nth-child(3){
+          display: block;
+        }
+
+      }
+
+    }
+
+    @media only screen and (max-width: $screen-xs-max) {
+
+      height: 70vh;
+      @include flex-wrap(wrap);
+      @include flex-grow(0);
+      @include flex-shrink(0);
+
+      >div{
+
+        width: 100%;
+        padding-left: 3vw;
+        @include flex-grow(0);
+        @include flex-shrink(0);
+        margin-top: -120px;
+
+        h5{
+          font-size: 10px;
+        }
+
+        &:nth-child(1){
+          margin-left: 0;
+          text-align: center;
+          @include flex-grow(0);
+          @include flex-shrink(0);
+          .links{
+            a{
+              margin: 5px 20px;
+              font-size: 18px;
+            }
+          }
+        }
+
+        &:nth-child(2){
+          width: 50%;
+          div{
+            float: left;
+          }
+          i{
+            width: 80px;
+            margin-top: 10px;
+          }
+        }
+
+        &:nth-child(3){
+          width: 50%;
+          display: block;
+          text-align: right;
+          h5{
+            padding-right: 20px;
+          }
+          >div{
+            float: right;
+            margin-right: 12px;
+            a{
+              margin-left: 8px;
+            }
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+
   >.info {
 
     position: relative;
@@ -215,8 +386,18 @@
       left: 0;
       @include flexbox();
 
+      @media only screen and (max-width: $screen-xs-max) {
+        display: block;
+        position: relative;
+        padding-top: 1px;
+      }
+
       p{
         font-size: 12px;
+        @media only screen and (max-width: $screen-xs-max) {
+          font-size: 12px;
+          line-height: 1.4;
+        }
       }
 
       i.icons.cloudmill{
@@ -244,6 +425,9 @@
         p{
           font-size: 24px;
           text-transform: capitalize;
+          @media only screen and (max-width: $screen-md-max) {
+            font-size: 12px;
+          }
         }
 
         hr{
@@ -280,6 +464,7 @@
 
         width: 33.3vw;
 
+
       }
 
       >aside{
@@ -307,6 +492,16 @@
           p{
             font-size: 19px !important;
           }
+
+        }
+
+      }
+
+      @media only screen and (max-width: $screen-xs-max) {
+
+        >section{
+
+          width: 100%;
 
         }
 
@@ -476,9 +671,6 @@
           &:nth-child(5){
             @include flexbox();
             padding-left: 0;
-            @media only screen and (max-width: $screen-md-max) {
-              padding-left: 5vw;
-            }
             >div{
               width: 33.3%;
               padding-left: $index-padding-left;
@@ -488,6 +680,7 @@
             }
             @media only screen and (max-width: $screen-md-max) {
               @include flex-wrap(wrap);
+              padding-left: 5vw;
               >div{
                 width: 50%;
                 padding-left: 0;
@@ -495,6 +688,17 @@
                   display: block;
                 }
 
+              }
+            }
+            @media only screen and (max-width: $screen-xs-max) {
+              display: block;
+              text-align: center;
+              margin-top: 24vh;
+              height: auto;
+              padding-left: 0;
+              >div{
+                margin-left: 25%;
+                margin-bottom: 10vh;
               }
             }
 
@@ -562,6 +766,10 @@
 
         @media only screen and (min-width: $screen-lg-min) {
           height: 17vh;
+        }
+
+        @media only screen and (max-width: $screen-xs-max) {
+          top: 3vh;
         }
 
         hr{
@@ -637,6 +845,10 @@
               background-position: center center;
               background-repeat: no-repeat;
 
+              @media only screen and (max-width: $screen-xs-max) {
+                width: 28vw;
+              }
+
             }
 
           }
@@ -707,9 +919,13 @@
     z-index: 5;
     @include translate(-50%, -50%);
 
+    @media only screen and (max-width: $screen-sm-max) {
+      height: 12vh;
+    }
+
     @media only screen and (max-width: $screen-md-max) {
 
-      top: 50%;
+      top: 50vh;
       left: 0;
       width: 100%;
       @include translate(0, -50%);
@@ -748,6 +964,10 @@
 
     }
 
+    @media only screen and (max-width: $screen-xs-max) {
+      top: 44vh;
+    }
+
     .lines-spacer {
 
       @include flex-basis(118px);
@@ -768,6 +988,10 @@
       background-color: $brand-primary;
       color: white;
       padding-left: 1.5vw;
+
+      @media only screen and (max-width: $screen-xs-max) {
+        height: 18vh;
+      }
 
       .arrow{
         height: 30px;
@@ -809,6 +1033,10 @@
         color: rgba(255 ,255, 255, .5);
         font-family: $font-family-accent;
         font-style: italic;
+
+        @media only screen and (max-width: $screen-xs-max) {
+          line-height: 16px;
+        }
 
         &.huge{
           font-size: 7vw;
@@ -1094,15 +1322,25 @@
 
   h2{
     font-size: 34px;
+    @media only screen and (max-width: $screen-xs-max) {
+      font-size: 24px;
+    }
   }
 
   h3{
     font-size: 16px;
+    @media only screen and (max-width: $screen-xs-max) {
+      font-size: 12px;
+    }
   }
 
   p{
     color: white;
     font-size: 14px;
+    @media only screen and (max-width: $screen-xs-max) {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+    }
   }
 
   a{
@@ -1119,6 +1357,9 @@
     border-top: 1px solid rgba(255, 255, 255, .5);
     width: 40px;
     margin: 4vh 0;
+    @media only screen and (max-width: $screen-xs-max) {
+      margin: 3vh 0;
+    }
   }
 
   nav{
@@ -1129,6 +1370,10 @@
       font-family: $font-family-header;
       letter-spacing: .4em;
       margin-bottom: 2vh;
+      @media only screen and (max-width: $screen-xs-max) {
+        font-size: 10px;
+        margin-bottom: 1.5vh;
+      }
     }
 
   }
@@ -1154,10 +1399,29 @@
 
         @include flexbox();
 
+        @media only screen and (max-width: $screen-xs-max) {
+          @include flex-direction(column);
+          > aside, div{
+            width: 100%;
+          }
+        }
+
+        @media only screen and (max-width: $screen-xs-max) {
+          >div{
+            h3{
+              margin-top: 50px;
+            }
+          }
+        }
+
         >aside, div{
 
           width: 50%;
           padding-top: 15vh;
+          @media only screen and (max-width: $screen-xs-max) {
+            padding-top: 2vh;
+            width: 100%;
+          }
 
         }
 
@@ -1167,6 +1431,10 @@
 
         padding-top: 6vh;
 
+        @media only screen and (max-width: $screen-xs-max) {
+          padding-top: 12vh;
+        }
+
         p{
           font-size: 16px;
           padding-right: 20vw;
@@ -1175,11 +1443,18 @@
             font-size: 24px;
             margin: 1vh 0;
           }
+          @media only screen and (max-width: $screen-xs-max) {
+            font-size: 11px;
+            margin: 2vh 0;
+          }
         }
 
         a{
           font-size: 14px;
           text-transform: lowercase;
+          @media only screen and (max-width: $screen-xs-max) {
+            font-size: 10px;
+          }
         }
 
       }
@@ -1192,6 +1467,10 @@
 
     @extend .menu-toggle;
     background: transparent !important;
+    @media only screen and (max-width: $screen-xs-max) {
+      top: 2vw;
+      left: 2vw;
+    }
 
     span{
       display: block;

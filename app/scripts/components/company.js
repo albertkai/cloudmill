@@ -193,8 +193,8 @@ export default class extends React.Component {
                   </div>
 
                   <div>
-                    <div className="line"></div>
-                    <div className="logo">
+                    <div className="line hidden-xs hidden-sm"></div>
+                    <div className="logo hidden-xs">
                       <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
                       <span>Интерактивное агентство</span>
                     </div>
@@ -204,7 +204,7 @@ export default class extends React.Component {
 
                 <div>
 
-                  <div className="pull-right">
+                  <div className="pull-right hidden-xs">
                     <h3>8 812 425 67 17</h3>
 
                     <p className="transparent">г. Санкт-Петербург</p>
@@ -216,7 +216,7 @@ export default class extends React.Component {
 
               <div className="intro">
                 <div>
-                  <hr/>
+                  <hr className="hidden-xs"/>
                 </div>
                 <div>
                   <h2>копим опыт с 2009 года</h2>

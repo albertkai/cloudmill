@@ -13,7 +13,7 @@ export default class extends React.Component {
   render() {
 
     return (
-      <button className="menu-toggle" onClick={this._openMenu}>
+      <button className={'menu-toggle ' + this.props.className} onClick={this._openMenu}>
         <div>
           <div></div>
           <div></div>

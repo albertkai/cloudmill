@@ -22,13 +22,15 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 }
 
-
-
 #app{
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  //@media only screen and (max-width: $screen-xs-max) {
+  //  overflow-y: scroll;
+  //  overflow-x: hidden;
+  //}
 }
 
 body{
@@ -54,6 +56,34 @@ p{
 
   }
 
+}
+
+.mobile-nav{
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  background: #191b1c;
+  z-index: $zindex-navbar-fixed;
+  .menu-toggle{
+    margin: 0;
+    top: 1vh;
+    left: 1vh;
+  }
+  .logo{
+    margin: 2vh 0;
+    i.icons.cloudmill{
+      width: 35.3vw;
+      height: 10vw;
+      margin-bottom: -5px;
+      background-image: url(../images/icons/logo_m.svg);
+    }
+    span{
+      position: relative;
+      top: -3px;
+      font-size: 2.38vw;
+      left: 2px;
+    }
+  }
 }
 
 a{

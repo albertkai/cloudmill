@@ -4,6 +4,7 @@
   "dependencies": {
     "gsap": "^1.18.2",
     "gsap-react-plugin": "^1.0.2",
+    "iscroll": "^5.2.0",
     "jquery": "^2.2.3",
     "nprogress": "^0.2.0",
     "react": "^0.13.3",

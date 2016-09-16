@@ -7,7 +7,7 @@
   left: 0;
   overflow: hidden;
   @include flexbox();
-
+  -webkit-overflow-scrolling: touch;
 
   &._rendered{
 
@@ -112,6 +112,10 @@
     width: 20vw;
     background: $gray-dark;
     padding-top: 15vh;
+
+    @media only screen and (max-width: $screen-xs-max) {
+      display: none;
+    }
 
     .lead{
       @include transition(trasform .8s ease, opacity .8s ease);
@@ -255,6 +259,10 @@
     position: relative;
     width: 100%;
 
+    @media only screen and (max-width: $screen-xs-max) {
+      margin-bottom: 15vh;
+    }
+
     &.vertical{
 
       margin-top: 20vh;
@@ -263,9 +271,16 @@
 
         .slides{
           height: 70vw;
+          @media only screen and (max-width: $screen-xs-max) {
+            height: 110vw;
+          }
           >li{
             width: 40vw;
             height: 60vw;
+            @media only screen and (max-width: $screen-xs-max) {
+              width: 57vw;
+              height: 88vw;
+            }
 
             &.prev{
               @include transform(translate3d(-130%, -95%, -70px) scale(.35));
@@ -313,9 +328,18 @@
 
       }
 
+      @media only screen and (max-width: $screen-xs-max) {
+
+        .switcher {
+          height: 9% !important;
+        }
+
+      }
+
     }
 
     .slider-cont{
+
       position: relative;
       width: 100%;
       overflow: hidden;
@@ -337,6 +361,11 @@
         @include flex-wrap(wrap);
         z-index: 1;
 
+        @media only screen and (max-width: $screen-xs-max) {
+          height: 23%;
+          width: 30%;
+        }
+
         .arrow {
 
           height: 18px;
@@ -353,6 +382,11 @@
           line-height: 12px;
           cursor: pointer;
 
+          @media only screen and (max-width: $screen-xs-max) {
+            margin: 0 1.5vw;
+
+          }
+
           &:hover {
             background: white;
             color: $brand-primary;
@@ -367,10 +401,17 @@
           font-family: $font-family-accent;
           font-style: italic;
 
+          @media only screen and (max-width: $screen-xs-max) {
+            font-size: 6vw;
+          }
+
           &.huge {
             font-size: 4vw;
             color: white;
             margin-left: -0.1vw;
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 8vw;
+            }
           }
 
         }
@@ -387,6 +428,11 @@
         padding: 0;
         @include transform(translateZ(5px));
 
+        @media only screen and (max-width: $screen-xs-max) {
+          height: 61vw;
+          margin-bottom: 10vh;
+        }
+
         >li{
 
           position: absolute;
@@ -399,6 +445,11 @@
           background-position: center;
           @include transition(all .4s ease);
           @include transform-origin(center);
+
+          @media only screen and (max-width: $screen-xs-max) {
+            height: 61vw;
+            width: 80vw;
+          }
 
 
           .pic{
@@ -486,9 +537,18 @@
     background: #27292a;
     overflow-y: hidden;
 
+    @media only screen and (max-width: $screen-xs-max) {
+      width: 100vw !important;
+      overflow-x: hidden !important;
+    }
+
     .heading {
 
       @include flexbox();
+
+      @media only screen and (max-width: $screen-xs-max) {
+        padding-top: 8vh;
+      }
 
       > div {
 
@@ -552,6 +612,17 @@
               font-size: 14px;
               width: 150px;
 
+            }
+
+            @media only screen and (max-width: $screen-xs-max) {
+              p{
+                line-height: 1.5;
+                font-size: 11px;
+                text-transform: uppercase;
+              }
+              i{
+                margin-top: -5px;
+              }
             }
 
             &:hover {
@@ -646,6 +717,10 @@
 
         margin-bottom: 4vh;
 
+        @media only screen and (max-width: $screen-xs-max) {
+          margin-bottom: 3vh;
+        }
+
       }
 
       h2 {
@@ -656,12 +731,27 @@
         font-size: 8vw;
         margin: 6vh 0 4vh 0;
         z-index: 4;
+        @media only screen and (max-width: $screen-xs-max) {
+          margin: 3vh 0vh 2vh 0;
+        }
       }
 
       > h3 {
 
         margin: 12vh 0 6vh 0;
 
+        @media only screen and (max-width: $screen-xs-max) {
+          font-size: 14px;
+        }
+
+      }
+
+      @media only screen and (max-width: $screen-xs-max) {
+        h3{
+          font-size: 16px;
+          margin-top: 2vh;
+          margin-bottom: 6vh;
+        }
       }
 
       .main-desc {
@@ -677,6 +767,10 @@
         @media only screen and (max-width: $screen-md-max) {
           font-size: 16px;
           margin-bottom: 7vh;
+        }
+        @media only screen and (max-width: $screen-xs-max) {
+          font-size: 12px;
+          line-height: 1.44;
         }
       }
 
@@ -701,6 +795,11 @@
         font-size: 18px;
         padding: 0 20vw;
         margin-bottom: 5vh;
+        @media only screen and (max-width: $screen-xs-max) {
+          font-size: 10px;
+          line-height: 1.44;
+          padding: 0px 10vw;
+        }
         > a {
           color: $brand-primary;
         }
@@ -747,6 +846,10 @@
 
         }
 
+        @media only screen and (max-width: $screen-xs-max) {
+          height: 75vw !important;
+        }
+
         .switcher {
 
           position: absolute;
@@ -763,10 +866,17 @@
           @include justify-content(center);
           @include flex-wrap(wrap);
 
+          @media only screen and (max-width: $screen-xs-max) {
+            height: 25%;
+            width: 30%;
+          }
+
           .arrow {
 
             height: 18px;
             width: 18px;
+            @include flex-grow(0);
+            @include flex-shrink(0);
             @include border-radius(50%);
             @include transition(all .2s ease);
             border: 1px solid white;
@@ -778,6 +888,12 @@
             font-size: 10px;
             line-height: 12px;
             cursor: pointer;
+
+            @media only screen and (max-width: $screen-xs-max) {
+              border: 0;
+              font-size: 18px;
+              padding: 0 8px;
+            }
 
             &:hover {
               background: white;
@@ -792,11 +908,17 @@
             color: rgba(255, 255, 255, .5);
             font-family: $font-family-accent;
             font-style: italic;
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 5vw;
+            }
 
             &.huge {
               font-size: 4vw;
               color: white;
               margin-left: -0.1vw;
+              @media only screen and (max-width: $screen-xs-max) {
+                font-size: 8vw;
+              }
             }
 
           }
@@ -814,6 +936,11 @@
         background-image: url(../images/mac.png);
         -webkit-background-size: contain;
         background-size: contain;
+
+        @media only screen and (max-width: $screen-xs-max) {
+          height: 61.1vw;
+          width: 90vw;
+        }
 
         > ul {
 
@@ -904,6 +1031,11 @@
         margin-top: -12vh;
         margin-bottom: -12vh;
 
+        @media only screen and (max-width: $screen-xs-max) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
         .switcher {
 
           position: absolute;
@@ -919,6 +1051,11 @@
           @include align-items(center);
           @include justify-content(center);
           @include flex-wrap(wrap);
+
+          @media only screen and (max-width: $screen-xs-max) {
+            width: 30%;
+            height: 25%;
+          }
 
           .arrow {
 
@@ -936,6 +1073,10 @@
             line-height: 12px;
             cursor: pointer;
 
+            @media only screen and (max-width: $screen-xs-max) {
+              margin: 0 1.5vw;
+            }
+
             &:hover {
               background: white;
               color: $brand-primary;
@@ -950,10 +1091,17 @@
             font-family: $font-family-accent;
             font-style: italic;
 
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 6vw;
+            }
+
             &.huge {
               font-size: 4vw;
               color: white;
               margin-left: -0.1vw;
+              @media only screen and (max-width: $screen-xs-max) {
+                font-size: 8vw;
+              }
             }
 
           }
@@ -1066,7 +1214,6 @@
           width: 25%;
           padding: 2vw 0 2vw 5vw;
           text-align: left;
-
           &:nth-child(2){
             @include transition-delay(.2s)
           }
@@ -1083,9 +1230,18 @@
             text-transform: uppercase;
             font-size: 16px;
             font-family: $font-family-header;
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 12px;
+              line-height: 1.5;
+              margin-bottom: 3vh;
+            }
           }
           p {
             font-size: 12px;
+            @media only screen and (max-width: $screen-xs-max) {
+              font-size: 10px;
+              line-height: 1.5;
+            }
           }
           > span {
             position: absolute;
@@ -1094,6 +1250,10 @@
             font-family: $font-family-accent;
             font-style: italic;
             font-size: 14px;
+            @media only screen and (max-width: $screen-xs-max) {
+              top: -1vw;
+              left: 0;
+            }
           }
           .platform {
             @include flexbox();
@@ -1123,6 +1283,36 @@
 
             }
 
+          }
+
+        }
+
+        @media only screen and (max-width: $screen-xs-max) {
+
+          > div {
+            padding: 4vw 4vw 4vw 8vw;
+          }
+          .platform {
+            @include flexbox();
+            >div{
+              width: 33%;
+            }
+            >p{
+              width: 67%;
+            }
+            .icon-bitrix{
+              margin-bottom: 10px;
+            }
+            span {
+              font-size: 33px;
+              padding-right: 1vw;
+            }
+          }
+          button {
+            display: block;
+            width: 100%;
+            font-size: 12px;
+            padding: 10px;
           }
 
         }
@@ -1301,30 +1491,35 @@
 
         }
 
-      }
+        @media only screen and (max-width: $screen-xs-max) {
 
-      .bottom-info {
+          padding: 2.5vw;
 
-        @include flexbox();
+          > .cont {
 
-        > div {
-
-          &:nth-child(1) {
-            width: 33.3%;
-          }
-
-          &:nth-child(2) {
-
-            @include flexbox();
-            width: 66.7%;
-            border-left: 1px solid rgba(255, 255, 255, .5);
-            padding: 2.5vw 2vw;
+            @include flex-wrap(wrap);
 
             > div {
 
-              position: relative;
-              width: 33.3%;
-              text-align: left;
+              width: 50%;
+              padding: 3.8vw;
+
+              span {
+                top: -1px;
+                left: -2px;
+                font-size: 10px;
+              }
+
+              > div {
+                width: 40vw;
+                height: 40vw;
+                > div {
+                  top: 0;
+                  left: 0;
+                  width: 40vw;
+                  height: 40vw;
+                }
+              }
 
             }
 
@@ -1332,25 +1527,130 @@
 
         }
 
+      }
+
+      .bottom-links{
+
+        @include flexbox();
+
+        height: 11.5vh;
+
+        .v-line{
+          position: absolute;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          left: -40px;
+          background: rgba(255, 255, 255, .5);
+        }
+
+        >div{
+
+          position: relative;
+          width: 25%;
+
+          &:nth-child(1){
+            margin-left: 50%;
+          }
+
+          &:nth-child(2){
+            div{
+              margin-left: 3vw;
+            }
+          }
+
+          &:nth-child(3){
+            display: none;
+          }
+        }
+
         @media only screen and (max-width: $screen-md-max) {
 
-          > div {
+          height: 9vh;
 
-            &:nth-child(1) {
-              display: none;
+          >div{
+
+            width: 33.3%;
+            padding-left: 3vw;
+
+            &:nth-child(1){
+              margin-left: 0;
+              margin-top: 20px;
             }
 
-            &:nth-child(2) {
-              width: 100%;
-              border-left: 0;
-              > div {
-                padding-left: 3vw;
+            &:nth-child(2){
+              div{
+                float: left;
+              }
+            }
+
+            &:nth-child(3){
+              display: block;
+            }
+
+          }
+
+        }
+
+        @media only screen and (max-width: $screen-xs-max) {
+
+          height: 33vh;
+          @include flex-wrap(wrap);
+
+          >div{
+
+            width: 100%;
+            padding-left: 3vw;
+            @include flex-grow(0);
+            @include flex-shrink(0);
+            margin-top: -7px;
+
+            h5{
+              font-size: 10px;
+            }
+
+            &:nth-child(1){
+              margin-left: 0;
+              text-align: center;
+              .links{
+                a{
+                  margin: 5px 20px;
+                  font-size: 18px;
+                }
+              }
+            }
+
+            &:nth-child(2){
+              width: 50%;
+              div{
+                float: left;
+              }
+              i{
+                width: 80px;
+                margin-top: 10px;
+              }
+            }
+
+            &:nth-child(3){
+              width: 50%;
+              display: block;
+              text-align: right;
+              h5{
+                padding-right: 20px;
+              }
+              >div{
+                float: right;
+                margin-right: 12px;
+                a{
+                  margin-left: 8px;
+                }
               }
             }
 
           }
 
         }
+
 
       }
 
