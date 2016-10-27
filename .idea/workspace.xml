@@ -2,28 +2,176 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36015b6f-7f2e-49d4-9984-ed3ffca180dc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/contact_me.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/court/logo.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/fok/ipad_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/laptop.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/laptop2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/maton/slider/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/portfolio_bg.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/slider/1.jpg" afterPath="$PROJECT_DIR$/app/images/aton/slider/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/1.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/mac/1.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/mac/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/slider/1.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/slider/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/1.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/slider/2.jpg" afterPath="$PROJECT_DIR$/app/images/aton/slider/2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/2.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/slider/2.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/slider/2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/2.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/slider/3.jpg" afterPath="$PROJECT_DIR$/app/images/aton/slider/3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/3.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/slider/3.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/slider/3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/3.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/slider/4.jpg" afterPath="$PROJECT_DIR$/app/images/aton/slider/4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/4.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/slider/4.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/slider/4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/4.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/slider/5.jpg" afterPath="$PROJECT_DIR$/app/images/aton/slider/5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/5.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/slider/5.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/slider/5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/5.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/slider/6.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/slider/6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/slider/6.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/slider/6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/bg.jpg" afterPath="$PROJECT_DIR$/app/images/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/bg.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/bg.jpg" afterPath="$PROJECT_DIR$/app/images/runit/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/bg.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/bg.jpg" afterPath="$PROJECT_DIR$/dist/images/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/bg.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/bg.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/bg.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/bg2.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/bg2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/bg2.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/bg2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/case_bg.jpg" afterPath="$PROJECT_DIR$/app/images/case_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/case_bg.jpg" afterPath="$PROJECT_DIR$/dist/images/case_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/clouds.jpg" afterPath="$PROJECT_DIR$/app/images/clouds.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/clouds.jpg" afterPath="$PROJECT_DIR$/dist/images/clouds.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist.zip" afterPath="$PROJECT_DIR$/dist.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/elements.jpg" afterPath="$PROJECT_DIR$/app/images/runit/elements.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/elements.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/elements.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/elements.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/elements.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/elements.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/elements.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/gallery.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/gallery.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/gallery.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/gallery.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/image1.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/image1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/image1.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/image1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/image2.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/image2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/image2.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/image2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/ipad_bg.jpg" afterPath="$PROJECT_DIR$/app/images/ipad_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/ipad_bg.jpg" afterPath="$PROJECT_DIR$/app/images/fok/ipad_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/ipad_bg.jpg" afterPath="$PROJECT_DIR$/dist/images/ipad_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/laptop.png" afterPath="$PROJECT_DIR$/app/images/aton/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/laptop.png" afterPath="$PROJECT_DIR$/app/images/checkroom/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/laptop.png" afterPath="$PROJECT_DIR$/app/images/runit/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/laptop.png" afterPath="$PROJECT_DIR$/app/images/setlgroup/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/laptop.png" afterPath="$PROJECT_DIR$/dist/images/aton/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/laptop.png" afterPath="$PROJECT_DIR$/dist/images/checkroom/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/laptop.png" afterPath="$PROJECT_DIR$/dist/images/runit/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/laptop.png" afterPath="$PROJECT_DIR$/dist/images/setlgroup/laptop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/laptop2.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/laptop2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/laptop2.jpg" afterPath="$PROJECT_DIR$/app/images/runit/laptop2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/laptop2.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/laptop2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/laptop2.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/laptop2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/logo.png" afterPath="$PROJECT_DIR$/app/images/aton/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/logo.png" afterPath="$PROJECT_DIR$/app/images/checkroom/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/logo.png" afterPath="$PROJECT_DIR$/app/images/fok/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/logo.png" afterPath="$PROJECT_DIR$/app/images/setlgroup/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/logo.png" afterPath="$PROJECT_DIR$/app/images/veneta/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/logo.png" afterPath="$PROJECT_DIR$/dist/images/aton/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/logo.png" afterPath="$PROJECT_DIR$/dist/images/checkroom/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/fok/logo.png" afterPath="$PROJECT_DIR$/dist/images/fok/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/logo.png" afterPath="$PROJECT_DIR$/dist/images/setlgroup/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/logo.png" afterPath="$PROJECT_DIR$/dist/images/veneta/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/mac.png" afterPath="$PROJECT_DIR$/app/images/mac.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/mac.png" afterPath="$PROJECT_DIR$/dist/images/mac.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/main_pic.jpg" afterPath="$PROJECT_DIR$/app/images/aton/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/main_pic.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/main_pic.jpg" afterPath="$PROJECT_DIR$/app/images/fok/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/main_pic.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/main_pic.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/main_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/main_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/fok/main_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/fok/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/main_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/main_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/main_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/other.jpg" afterPath="$PROJECT_DIR$/app/images/aton/other.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/other.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/other.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/pic1.jpg" afterPath="$PROJECT_DIR$/app/images/fok/pic1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/fok/pic1.jpg" afterPath="$PROJECT_DIR$/dist/images/fok/pic1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/pic2.jpg" afterPath="$PROJECT_DIR$/app/images/fok/pic2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/fok/pic2.jpg" afterPath="$PROJECT_DIR$/dist/images/fok/pic2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/portfolio_bg.jpg" afterPath="$PROJECT_DIR$/app/images/portfolio_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/protfolio_bg.jpg" afterPath="$PROJECT_DIR$/app/images/aton/protfolio_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/protfolio_bg.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/protfolio_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/runit_logo.png" afterPath="$PROJECT_DIR$/app/images/runit/runit_logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/runit_logo.png" afterPath="$PROJECT_DIR$/dist/images/runit/runit_logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/sample.jpg" afterPath="$PROJECT_DIR$/app/images/sample.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/sample.jpg" afterPath="$PROJECT_DIR$/dist/images/sample.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/sample_port.jpg" afterPath="$PROJECT_DIR$/app/images/sample_port.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/sample_port.jpg" afterPath="$PROJECT_DIR$/dist/images/sample_port.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/screens.jpg" afterPath="$PROJECT_DIR$/app/images/aton/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/screens.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/screens.jpg" afterPath="$PROJECT_DIR$/app/images/runit/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/screens.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/screens.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/screens.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/screens.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/screens.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/screens.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/screens.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/screens.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/screens.png" afterPath="$PROJECT_DIR$/app/images/aton/screens.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/screens.png" afterPath="$PROJECT_DIR$/dist/images/aton/screens.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/screens2.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/screens2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/screens2.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/screens2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/screens_skew.jpg" afterPath="$PROJECT_DIR$/app/images/aton/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/checkroom/screens_skew.jpg" afterPath="$PROJECT_DIR$/app/images/checkroom/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/screens_skew.jpg" afterPath="$PROJECT_DIR$/app/images/runit/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/screens_skew.jpg" afterPath="$PROJECT_DIR$/dist/images/aton/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/checkroom/screens_skew.jpg" afterPath="$PROJECT_DIR$/dist/images/checkroom/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/screens_skew.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/screens_skew.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/screens_skew.png" afterPath="$PROJECT_DIR$/app/images/aton/screens_skew.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/screens_skew.png" afterPath="$PROJECT_DIR$/dist/images/aton/screens_skew.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider/setl.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider/setl.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_1.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_1.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_2.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_2.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_3.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_3.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_6.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider/setl_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_6.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider/setl_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/fok/slider.jpg" afterPath="$PROJECT_DIR$/app/images/fok/slider.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/setlgroup/slider.jpg" afterPath="$PROJECT_DIR$/app/images/setlgroup/slider.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/fok/slider.jpg" afterPath="$PROJECT_DIR$/dist/images/fok/slider.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/setlgroup/slider.jpg" afterPath="$PROJECT_DIR$/dist/images/setlgroup/slider.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/specia.png" afterPath="$PROJECT_DIR$/dist/images/icons/specia.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aton/special_bg.png" afterPath="$PROJECT_DIR$/app/images/aton/special_bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/aton/special_bg.png" afterPath="$PROJECT_DIR$/dist/images/aton/special_bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/runit/title.jpg" afterPath="$PROJECT_DIR$/app/images/runit/title.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/runit/title.jpg" afterPath="$PROJECT_DIR$/dist/images/runit/title.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/top_pic.jpg" afterPath="$PROJECT_DIR$/app/images/veneta/top_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/top_pic.jpg" afterPath="$PROJECT_DIR$/dist/images/veneta/top_pic.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/veneta/top_pic.png" afterPath="$PROJECT_DIR$/app/images/veneta/top_pic.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/veneta/top_pic.png" afterPath="$PROJECT_DIR$/dist/images/veneta/top_pic.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/DT.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/DT.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/PT.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/PT.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/pages/_case.scss" afterPath="$PROJECT_DIR$/app/styles/pages/_case.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/pages/_common.scss" afterPath="$PROJECT_DIR$/app/styles/pages/_common.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/pages/_company.scss" afterPath="$PROJECT_DIR$/app/styles/pages/_company.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/pages/_main-page.scss" afterPath="$PROJECT_DIR$/app/styles/pages/_main-page.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/pages/_portfolio.scss" afterPath="$PROJECT_DIR$/app/styles/pages/_portfolio.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/_variables.scss" afterPath="$PROJECT_DIR$/app/styles/_variables.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/app.js" afterPath="$PROJECT_DIR$/dist/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/case/case.js" afterPath="$PROJECT_DIR$/app/scripts/components/case/case.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/company.js" afterPath="$PROJECT_DIR$/app/scripts/components/company.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/layout.js" afterPath="$PROJECT_DIR$/app/scripts/components/layout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/common/loader.js" afterPath="$PROJECT_DIR$/app/scripts/components/common/loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/comp.svg" afterPath="$PROJECT_DIR$/dist/images/icons/comp.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/dsgn.svg" afterPath="$PROJECT_DIR$/dist/images/icons/dsgn.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/logo.svg" afterPath="$PROJECT_DIR$/dist/images/icons/logo.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/logo_m.svg" afterPath="$PROJECT_DIR$/dist/images/icons/logo_m.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/main.css" afterPath="$PROJECT_DIR$/dist/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/main/main.js" afterPath="$PROJECT_DIR$/app/scripts/components/main/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/vendor/modernizr.js" afterPath="$PROJECT_DIR$/dist/scripts/vendor/modernizr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/portfolio.js" afterPath="$PROJECT_DIR$/app/scripts/components/portfolio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/components/common/toggleMenu.js" afterPath="$PROJECT_DIR$/app/scripts/components/common/toggleMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/vendor.js" afterPath="$PROJECT_DIR$/dist/scripts/vendor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/pirogi.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/pirogi.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/icons/search.svg" afterPath="$PROJECT_DIR$/dist/images/icons/search.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/setl.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/setl.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/solnishko.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/solnishko.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/ttk.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/ttk.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/slider_logos/veneta.svg" afterPath="$PROJECT_DIR$/dist/images/slider_logos/veneta.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/data/works.js" afterPath="$PROJECT_DIR$/app/scripts/data/works.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudmill_react.iws" />
@@ -48,8 +196,18 @@
       <file leaf-file-name="_main-page.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/pages/_main-page.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+            <state vertical-scroll-proportion="-4.769231">
+              <caret line="918" column="16" selection-start-line="918" selection-start-column="16" selection-end-line="918" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_portfolio.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/pages/_portfolio.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0769231">
+              <caret line="338" column="71" selection-start-line="338" selection-start-column="71" selection-end-line="338" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -77,11 +235,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -158,95 +316,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/components/company.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="60" selection-start-line="195" selection-start-column="60" selection-end-line="195" selection-end-column="60" />
-              <folding>
-                <marker date="1474026424000" expanded="true" signature="1385:1760" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="1622:1746" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="2523:2780" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3452:11331" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3503:3918" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3522:3788" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3544:3651" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3799:3863" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3928:11317" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="3976:10201" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4024:10183" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4065:4834" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4108:4566" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4133:4200" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4220:4542" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4315:4517" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4584:4812" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4609:4788" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4850:5226" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4890:4964" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="4981:5205" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5242:6976" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5283:5425" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5442:6954" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5466:5547" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5566:6931" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="5636:6132" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="6153:6906" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="6288:6558" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="6581:6881" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="6992:7617" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7033:7172" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7189:7595" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7213:7294" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7313:7572" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7633:8372" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7674:7816" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7833:8350" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7857:7940" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="7959:8327" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8388:8909" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8463:8887" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8538:8863" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8638:8761" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8925:10163" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="8973:9452" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="9095:9429" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="9469:9642" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="9493:9619" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="9659:10141" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="9730:10118" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10213:11297" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10234:10916" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10360:10623" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10639:10896" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10930:11277" placeholder="&lt;xml/&gt;" />
-                <marker date="1474026424000" expanded="true" signature="10993:11258" placeholder="&lt;xml/&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/components/layout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-              <folding>
-                <marker date="1474024969000" expanded="true" signature="1385:2238" placeholder="&lt;xml/&gt;" />
-                <marker date="1474024969000" expanded="true" signature="1399:1669" placeholder="&lt;xml/&gt;" />
-                <marker date="1474024969000" expanded="true" signature="1449:1519" placeholder="&lt;xml/&gt;" />
-                <marker date="1474024969000" expanded="true" signature="1530:1654" placeholder="&lt;xml/&gt;" />
-                <marker date="1474024969000" expanded="true" signature="1678:2010" placeholder="&lt;xml/&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_case.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/pages/_case.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="541" column="35" selection-start-line="541" selection-start-column="35" selection-end-line="541" selection-end-column="35" />
+            <state vertical-scroll-proportion="-3.4230769">
+              <caret line="562" column="19" selection-start-line="562" selection-start-column="19" selection-end-line="562" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -255,8 +329,18 @@
       <file leaf-file-name="works.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/data/works.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state vertical-scroll-proportion="-4.3333335">
+              <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/components/case/case.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6376812">
+              <caret line="926" column="89" selection-start-line="926" selection-start-column="89" selection-end-line="926" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -294,7 +378,6 @@
         <option value="$PROJECT_DIR$/node_modules/react-gemini-scrollbar/src/index.jsx" />
         <option value="$PROJECT_DIR$/node_modules/react-gemini-scrollbar/dist/index.js" />
         <option value="$PROJECT_DIR$/app/scripts/components/common/filterLink.js" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/utils.js" />
         <option value="$PROJECT_DIR$/app/scripts/components/case/case2.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
@@ -312,7 +395,6 @@
         <option value="$PROJECT_DIR$/app/scripts/redux/reducers.js" />
         <option value="$PROJECT_DIR$/app/scripts/components/common/menu.js" />
         <option value="$PROJECT_DIR$/app/styles/_transitions.scss" />
-        <option value="$PROJECT_DIR$/app/scripts/data/works.js" />
         <option value="$PROJECT_DIR$/contact_me.php" />
         <option value="$PROJECT_DIR$/app/scripts/components/common/success.js" />
         <option value="$PROJECT_DIR$/app/scripts/components/common/modal.js" />
@@ -321,16 +403,18 @@
         <option value="$PROJECT_DIR$/app/styles/pages/_common.scss" />
         <option value="$PROJECT_DIR$/app/scripts/components/portfolio.js" />
         <option value="$PROJECT_DIR$/app/styles/pages/_company.scss" />
-        <option value="$PROJECT_DIR$/app/styles/pages/_portfolio.scss" />
-        <option value="$PROJECT_DIR$/app/scripts/components/case/case.js" />
-        <option value="$PROJECT_DIR$/app/styles/pages/_case.scss" />
         <option value="$PROJECT_DIR$/app/scripts/components/layout.js" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/scripts/components/company.js" />
         <option value="$PROJECT_DIR$/app/scripts/components/main/main.js" />
-        <option value="$PROJECT_DIR$/app/styles/pages/_main-page.scss" />
         <option value="$PROJECT_DIR$/app/styles/_variables.scss" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/data/works.js" />
+        <option value="$PROJECT_DIR$/app/styles/pages/_main-page.scss" />
+        <option value="$PROJECT_DIR$/app/styles/pages/_portfolio.scss" />
+        <option value="$PROJECT_DIR$/app/styles/pages/_case.scss" />
+        <option value="$PROJECT_DIR$/app/scripts/components/case/case.js" />
       </list>
     </option>
   </component>
@@ -349,7 +433,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="830" />
+    <option name="height" value="841" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -378,6 +462,7 @@
         <subPane subId="Default" />
         <subPane subId="Project Files" />
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -406,7 +491,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -424,9 +509,128 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmill_react" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,11 +644,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/images" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/dist/images" />
       <recent name="$PROJECT_DIR$/dist/images/fok" />
       <recent name="$PROJECT_DIR$/app/images/checkroom" />
-      <recent name="$PROJECT_DIR$/dist/images/aton" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dist/images/aton" />
@@ -508,7 +712,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="830" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="841" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -516,20 +720,20 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285151" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285151" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -821,54 +1025,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/pages/_portfolio.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9230769">
-          <caret line="705" column="32" selection-start-line="705" selection-start-column="32" selection-end-line="705" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/components/case/case.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2222223">
-          <caret line="721" column="65" selection-start-line="721" selection-start-column="65" selection-end-line="721" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/data/works.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/pages/_case.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="541" column="35" selection-start-line="541" selection-start-column="35" selection-end-line="541" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/components/layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <marker date="1474024969000" expanded="true" signature="1385:2238" placeholder="&lt;xml/&gt;" />
-            <marker date="1474024969000" expanded="true" signature="1399:1669" placeholder="&lt;xml/&gt;" />
-            <marker date="1474024969000" expanded="true" signature="1449:1519" placeholder="&lt;xml/&gt;" />
-            <marker date="1474024969000" expanded="true" signature="1530:1654" placeholder="&lt;xml/&gt;" />
-            <marker date="1474024969000" expanded="true" signature="1678:2010" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -877,65 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="195" column="60" selection-start-line="195" selection-start-column="60" selection-end-line="195" selection-end-column="60" />
-          <folding>
-            <marker date="1474026424000" expanded="true" signature="1385:1760" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="1622:1746" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="2523:2780" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3452:11331" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3503:3918" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3522:3788" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3544:3651" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3799:3863" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3928:11317" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="3976:10201" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4024:10183" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4065:4834" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4108:4566" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4133:4200" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4220:4542" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4315:4517" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4584:4812" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4609:4788" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4850:5226" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4890:4964" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="4981:5205" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5242:6976" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5283:5425" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5442:6954" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5466:5547" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5566:6931" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="5636:6132" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="6153:6906" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="6288:6558" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="6581:6881" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="6992:7617" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7033:7172" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7189:7595" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7213:7294" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7313:7572" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7633:8372" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7674:7816" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7833:8350" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7857:7940" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="7959:8327" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8388:8909" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8463:8887" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8538:8863" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8638:8761" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8925:10163" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="8973:9452" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="9095:9429" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="9469:9642" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="9493:9619" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="9659:10141" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="9730:10118" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10213:11297" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10234:10916" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10360:10623" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10639:10896" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10930:11277" placeholder="&lt;xml/&gt;" />
-            <marker date="1474026424000" expanded="true" signature="10993:11258" placeholder="&lt;xml/&gt;" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,14 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/pages/_main-page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1037,7 +1131,55 @@
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/pages/_main-page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.769231">
+          <caret line="918" column="16" selection-start-line="918" selection-start-column="16" selection-end-line="918" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/pages/_portfolio.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0769231">
+          <caret line="338" column="71" selection-start-line="338" selection-start-column="71" selection-end-line="338" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/data/works.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3333335">
+          <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/pages/_case.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4230769">
+          <caret line="562" column="19" selection-start-line="562" selection-start-column="19" selection-end-line="562" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/components/case/case.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6376812">
+          <caret line="926" column="89" selection-start-line="926" selection-start-column="89" selection-end-line="926" selection-end-column="89" />
           <folding />
         </state>
       </provider>

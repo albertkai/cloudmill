@@ -392,5 +392,185 @@ export default [
         width: '100%'
       }
     }
+  },{
+    name: 'SPBTRD.RU',
+    alias: 'spbtrd',
+    type: 'web',
+    logo: 'trans/logo.png',
+    price: '250 000',
+    shortDesc: 'Разработка корпоративного сайта с каталогом продукции.',
+    desc: 'Компания занимается разработкой, производством и поставками сухих смесей и красок «Рунит», выполняет проектирование и реставрационные работы на объектах культурного наследия.',
+    pic: 'trans/main.jpg',
+    headerSize: '17vw',
+    weMade: [
+      {
+        type: 'simple',
+        header: 'ИНТЕРАКТИВНЫЙ ПРОТОТИП',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+      },
+      {
+        type: 'website',
+        header: 'РАЗРАБОТАЛИ САЙТ',
+        platform: 'bitrix',
+        link: 'http://google.ru'
+      },
+      {
+        type: 'simple',
+        header: 'ЕЩЕ КОЕ ЧТО',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа'
+      },
+      {
+        type: 'simple',
+        header: 'И ПОСЛЕДНЕЕ',
+        text: 'Кучерявая тема входило разработка интерактивного прототипа'
+      }
+    ],
+    comp: [
+      {
+        component: 'sliderFullWidth',
+        props: {
+          items: [
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg'
+          ],
+          desc: 'Специально для проекта была выполнена фотосессия для каждой линейки продукции'
+        }
+      },
+      {
+        component: 'laptop',
+        props: {
+          items: [
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg'
+          ],
+          props: {
+            img: 'runit/laptop.gif',
+            line: false
+          }
+        }
+      },
+    ],
+    components: {
+      laptop: {
+        img: 'runit/laptop.gif',
+        line: false
+      },
+      specialBg: {
+        img: 'runit/bg.jpg',
+        shift: '-100vh'
+      },
+      imageWithDesc: {
+        img: 'runit/laptop2.gif',
+        desc: 'Каталог продукции с фильтром для удобсвта пользователей'
+      },
+      elements: {
+        img: 'runit/elements.jpg',
+        desc: 'Стилистика сайта, полностью соответствует корпоративным стандартам',
+        marginBottom: '-15vh'
+      },
+      screens: {
+        desc: '',
+        pic: 'runit/screens.jpg',
+        width: '100%',
+        marginTop: '-10vh'
+      },
+      screensSkew: {
+        count: 20,
+        pic: 'runit/screens_skew.jpg',
+        marginTop: '5vh'
+      }
+    }
+  },{
+    name: 'Третейский суд',
+    alias: 'court',
+    type: 'web',
+    logo: 'court/logo.png',
+    price: '350 000',
+    shortDesc: 'Разработка корпоративного сайта с каталогом продукции.',
+    desc: 'Компания занимается разработкой, производством и поставками сухих смесей и красок «Рунит», выполняет проектирование и реставрационные работы на объектах культурного наследия.',
+    pic: 'court/main.jpg',
+    headerSize: '17vw',
+    weMade: [
+      {
+        type: 'simple',
+        header: 'ИНТЕРАКТИВНЫЙ ПРОТОТИП',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+      },
+      {
+        type: 'website',
+        header: 'РАЗРАБОТАЛИ САЙТ',
+        platform: 'bitrix',
+        link: 'http://google.ru'
+      },
+      {
+        type: 'simple',
+        header: 'ЕЩЕ КОЕ ЧТО',
+        text: 'В предпроектную подготовку входило разработка интерактивного прототипа'
+      },
+      {
+        type: 'simple',
+        header: 'И ПОСЛЕДНЕЕ',
+        text: 'Кучерявая тема входило разработка интерактивного прототипа'
+      }
+    ],
+    comp: [
+      {
+        component: 'sliderFullWidth',
+        props: {
+          items: [
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg'
+          ],
+          desc: 'Специально для проекта была выполнена фотосессия для каждой линейки продукции'
+        }
+      },
+      {
+        component: 'laptop',
+        props: {
+          items: [
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg',
+            'aton/slider/1.jpg'
+          ],
+          props: {
+            img: 'runit/laptop.gif',
+            line: false
+          }
+        }
+      },
+    ],
+    components: {
+      laptop: {
+        img: 'runit/laptop.gif',
+        line: false
+      },
+      specialBg: {
+        img: 'runit/bg.jpg',
+        shift: '-100vh'
+      },
+      imageWithDesc: {
+        img: 'runit/laptop2.gif',
+        desc: 'Каталог продукции с фильтром для удобсвта пользователей'
+      },
+      elements: {
+        img: 'runit/elements.jpg',
+        desc: 'Стилистика сайта, полностью соответствует корпоративным стандартам',
+        marginBottom: '-15vh'
+      },
+      screens: {
+        desc: '',
+        pic: 'runit/screens.jpg',
+        width: '100%',
+        marginTop: '-10vh'
+      },
+      screensSkew: {
+        count: 20,
+        pic: 'runit/screens_skew.jpg',
+        marginTop: '5vh'
+      }
+    }
   }
 ]

@@ -868,6 +868,7 @@ var _default = (function (_React$Component5) {
         _this7.forceUpdate();
       });
       $('.animate').addClass('_animate-from');
+      $('.animate-3d').addClass('_animate-from-3d');
       $('.scrollbar-macosx').scrollbar();
       $('.animate').waypoint(function (dir) {
         if (dir === 'down') {
@@ -878,9 +879,26 @@ var _default = (function (_React$Component5) {
         context: '#case .scroll-content',
         offset: $(window).height() / 1.5
       });
+      $('.animate-3d').waypoint(function (dir) {
+        if (dir === 'down') {
+          console.log($(this.element));
+          $(this.element).removeClass('_animate-from-3d');
+        }
+      }, {
+        context: '#case .scroll-content',
+        offset: $(window).height() / 1.5
+      });
       $('.animate').waypoint(function (dir) {
         if (dir === 'up') {
           $(this.element).addClass('_animate-from');
+        }
+      }, {
+        context: '#case .scroll-content',
+        offset: $(window).height() / 2
+      });
+      $('.animate-3d').waypoint(function (dir) {
+        if (dir === 'up') {
+          $(this.element).addClass('_animate-from-3d');
         }
       }, {
         context: '#case .scroll-content',
@@ -972,6 +990,8 @@ var _default = (function (_React$Component5) {
     key: 'render',
     value: function render() {
       var _this8 = this;
+
+      var name = this.props.params.name;
 
       var work = this.state.work;
       var filteredWorks = this.props.store.getState().filteredWorks;
@@ -1109,221 +1129,899 @@ var _default = (function (_React$Component5) {
             )
           )
         ),
+        name === 'court' ? this._court(work, moreProjects) : name === 'spbtrd' ? this._trans(moreProjects) : this._caseCommon(work, moreProjects)
+      );
+    }
+  }, {
+    key: '_court',
+    value: function _court(work, moreProjects) {
+      return _react2['default'].createElement(
+        'section',
+        { className: 'scrollbar-macosx case-wrap' },
         _react2['default'].createElement(
-          'section',
-          { className: 'scrollbar-macosx case-wrap' },
+          'div',
+          { className: 'heading' },
           _react2['default'].createElement(
             'div',
-            { className: 'heading' },
+            null,
             _react2['default'].createElement(
               'div',
-              null,
+              { className: 'logo hidden-xs' },
               _react2['default'].createElement(
-                'div',
-                { className: 'logo hidden-xs' },
-                _react2['default'].createElement(
-                  _reactRouter.Link,
-                  { to: '/' },
-                  _react2['default'].createElement('i', { className: 'icons cloudmill' })
-                ),
-                ' ',
-                _react2['default'].createElement('br', null),
-                _react2['default'].createElement(
-                  'span',
-                  null,
-                  'Интерактивное агентство'
-                )
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
               ),
+              ' ',
+              _react2['default'].createElement('br', null),
               _react2['default'].createElement(
-                'button',
-                { onClick: this._back },
-                _react2['default'].createElement(
-                  'div',
-                  null,
-                  _react2['default'].createElement('i', { className: 'fa fa-angle-left' })
-                ),
-                _react2['default'].createElement(
-                  'p',
-                  null,
-                  _react2['default'].createElement(
-                    'span',
-                    null,
-                    'к списку'
-                  ),
-                  _react2['default'].createElement(
-                    'span',
-                    null,
-                    'проектов'
-                  )
-                )
+                'span',
+                null,
+                'Интерактивное агентство'
               )
             ),
             _react2['default'].createElement(
-              'div',
-              { className: 'hidden-xs' },
-              _react2['default'].createElement('div', { className: 'line animate' }),
+              'button',
+              { onClick: this._back },
               _react2['default'].createElement(
                 'div',
-                { className: 'logo' },
-                _react2['default'].createElement(
-                  _reactRouter.Link,
-                  { to: '/' },
-                  _react2['default'].createElement('i', { className: 'icons cloudmill' })
-                ),
-                ' ',
-                _react2['default'].createElement('br', null),
+                null,
+                _react2['default'].createElement('i', { className: 'fa fa-angle-left' })
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
                 _react2['default'].createElement(
                   'span',
                   null,
-                  'Интерактивное агентство'
-                )
-              ),
-              _react2['default'].createElement(
-                'div',
-                { className: 'contacts' },
-                _react2['default'].createElement(
-                  'h3',
-                  null,
-                  '8 812 425 67 17'
+                  'к списку'
                 ),
                 _react2['default'].createElement(
-                  'p',
-                  { className: 'transparent' },
-                  'г. Санкт-Петербург'
+                  'span',
+                  null,
+                  'проектов'
                 )
               )
             )
           ),
           _react2['default'].createElement(
             'div',
-            { className: 'case-loading' },
-            (0, _commonSpinner2['default'])()
-          ),
-          _react2['default'].createElement(
-            'div',
-            { className: 'case-cont' },
-            _react2['default'].createElement('div', { className: 'brand-bg' }),
-            _react2['default'].createElement('img', { className: 'logo', src: 'images/' + work.logo, alt: '' }),
-            _react2['default'].createElement(
-              'p',
-              { className: 'desc' },
-              work.shortDesc
-            ),
-            _react2['default'].createElement(
-              'h2',
-              { id: 'case-title', style: { fontSize: work.headerSize } },
-              work.name
-            ),
+            { className: 'hidden-xs' },
+            _react2['default'].createElement('div', { className: 'line animate' }),
             _react2['default'].createElement(
               'div',
-              { id: 'hidden-resizer', style: { fontSize: '100px', position: 'absolute', visibility: 'hidden' } },
-              work.name
-            ),
-            _react2['default'].createElement(
-              'p',
-              { className: 'main-desc' },
-              ' ',
-              work.desc,
-              ' '
-            ),
-            work.components.topPic ? topPic(work.components.topPic.img, work.components.topPic.marginBottom, work.components.topPic.desc) : null,
-            work.components.imageTop ? imageTop(work.components.imageTop.img, work.components.imageTop.desc) : null,
-            work.components.specialBg ? SpecialBg('images/' + work.components.specialBg.img, work.components.specialBg.shift, work.components.specialBg.top) : null,
-            work.components.laptop ? Laptop(work.components.laptop.img, work.components.laptop.line) : null,
-            work.components.slider3d ? _react2['default'].createElement(Slider3d, { pics: work.components.slider3d.pics, desc: work.components.slider3d.desc, type: work.components.slider3d.type }) : null,
-            work.components.screens ? Screens(work.components.screens.pic, work.components.screens.desc, work.components.screens.width, work.components.screens.marginTop) : null,
-            work.components.sliderFillWidth ? _react2['default'].createElement(SliderFullWidth, { items: work.components.sliderFillWidth.items, height: work.components.sliderFillWidth.height, desc: work.components.sliderFillWidth.desc }) : null,
-            work.components.iPadSlider ? _react2['default'].createElement(IPadSlider, { items: work.components.iPadSlider.pics, desc: work.components.iPadSlider.desc }) : null,
-            work.components.imageWithDesc ? ImageWithDesc(work.components.imageWithDesc.img, work.components.imageWithDesc.desc) : null,
-            work.components.elements ? Elements(work.components.elements.img, work.components.elements.desc, work.components.elements.marginBottom) : null,
-            work.components.imageWithDesc2 ? Elements(work.components.imageWithDesc2.img, work.components.imageWithDesc2.desc) : null,
-            work.components.imageWithDesc3 ? Elements(work.components.imageWithDesc3.img, work.components.imageWithDesc3.desc) : null,
-            work.components.macSlider ? _react2['default'].createElement(MacSlider, { items: work.components.macSlider.items, desc: work.components.macSlider.desc }) : null,
-            work.components.screensSkew ? ScreensSkew(work.components.screensSkew.pic, work.components.screensSkew.count, work.components.screensSkew.marginTop) : null,
-            work.weMade ? weMade(work) : null,
-            work.components.simpleText ? simpleText(work.components.simpleText.header, work.components.simpleText.text) : null,
-            _react2['default'].createElement('div', { className: 'animate line' }),
-            _react2['default'].createElement(
-              'div',
-              { className: 'more' },
+              { className: 'logo' },
               _react2['default'].createElement(
-                'div',
-                { className: 'cont' },
-                moreProjects.slice(0, 4)
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
+              ),
+              ' ',
+              _react2['default'].createElement('br', null),
+              _react2['default'].createElement(
+                'span',
+                null,
+                'Интерактивное агентство'
               )
             ),
             _react2['default'].createElement(
               'div',
-              { className: 'bottom-links' },
+              { className: 'contacts' },
+              _react2['default'].createElement(
+                'h3',
+                null,
+                '8 812 425 67 17'
+              ),
+              _react2['default'].createElement(
+                'p',
+                { className: 'transparent' },
+                'г. Санкт-Петербург'
+              )
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-loading' },
+          (0, _commonSpinner2['default'])()
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-cont', style: { position: 'relative' } },
+          _react2['default'].createElement('div', { className: 'brand-bg' }),
+          _react2['default'].createElement('img', { className: 'logo animate-3d', src: 'images/court/logo.png', style: { width: '20vw' }, alt: '' }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc' },
+            'Разработка сайта'
+          ),
+          _react2['default'].createElement(
+            'h2',
+            { id: 'case-title', style: { fontSize: '9vw' } },
+            'ТРЕТЕЙСКИЙ СУД НАП'
+          ),
+          _react2['default'].createElement(
+            'div',
+            { id: 'hidden-resizer', style: { fontSize: '100px', position: 'absolute', visibility: 'hidden' } },
+            'ТРЕТЕЙСКИЙ СУД НАП'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'main-desc' },
+            'Это современный, динамично развивающийся арбитражный институт, использующий передовые технологии.'
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'video' },
+            _react2['default'].createElement('iframe', { src: 'https://player.vimeo.com/video/188806746?autoplay=1', width: '640', height: '360', frameborder: '0', webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }),
+            _react2['default'].createElement(
+              'p',
+              null,
+              _react2['default'].createElement(
+                'a',
+                { href: 'https://vimeo.com/188806746' },
+                'NAP_presentation_cl'
+              ),
+              ' from ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'https://vimeo.com/user58274879' },
+                'CloudMill'
+              ),
+              ' on ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'https://vimeo.com' },
+                'Vimeo'
+              ),
+              '.'
+            )
+          ),
+          _react2['default'].createElement('img', { src: 'images/court/1.jpg', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/2.jpg', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_1.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_2.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_3.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_4.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_5.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/3_6.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/4_1.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/4_2.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement('img', { src: 'images/court/4_3.jpg', className: 'animate-3d', width: '100%', alt: '' }),
+          _react2['default'].createElement(
+            'div',
+            { className: 'we-made' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Интерактивный прототип'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '01'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Разработали сайт'
+              ),
+              _react2['default'].createElement(
+                'div',
+                { className: 'platform' },
+                _react2['default'].createElement(
+                  'div',
+                  null,
+                  _react2['default'].createElement('span', { className: 'icon-bitrix' })
+                ),
+                _react2['default'].createElement(
+                  'p',
+                  null,
+                  'Сайт разработан на платформе 1С-Битрикс'
+                )
+              ),
+              _react2['default'].createElement(
+                'button',
+                { className: 'outline' },
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'http://icarb.ru' },
+                  'Посетить сайт'
+                )
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '02'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'СДЕЛАЛИ АДАПТИВ'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'Сайт адаптируется под разные разрешения экрана пользователя.'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '03'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'ПОДДЕРЖКА ПРОЕКТА'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'Занимаемся развитием и техническим обслуживанием проекта.'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '04'
+              )
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'more' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'cont' },
+              moreProjects.slice(0, 4)
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'bottom-links' },
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Мы в социальных сетях'
+              ),
+              _react2['default'].createElement('div', { className: 'v-line' }),
+              _react2['default'].createElement(
+                'div',
+                { className: 'links' },
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://vk.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
+                )
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
               _react2['default'].createElement(
                 'div',
                 null,
                 _react2['default'].createElement(
                   'h5',
                   null,
-                  'Мы в социальных сетях'
+                  'Мы состоим в '
                 ),
-                _react2['default'].createElement('div', { className: 'v-line' }),
-                _react2['default'].createElement(
-                  'div',
-                  { className: 'links' },
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://facebook.com/cloudmill' },
-                    _react2['default'].createElement('i', { className: 'fa fa-facebook' })
-                  ),
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://vk.com/cloudmill' },
-                    _react2['default'].createElement('i', { className: 'fa fa-vk' })
-                  ),
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://twitter.com/cloudmill' },
-                    _react2['default'].createElement('i', { className: 'fa fa-twitter' })
-                  )
-                )
+                _react2['default'].createElement('i', { className: 'icons specia' })
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Поделиться ссылкой'
               ),
               _react2['default'].createElement(
                 'div',
                 null,
                 _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://vk.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }, {
+    key: '_trans',
+    value: function _trans(moreProjects) {
+      return _react2['default'].createElement(
+        'section',
+        { className: 'scrollbar-macosx case-wrap trans' },
+        _react2['default'].createElement(
+          'div',
+          { className: 'heading' },
+          _react2['default'].createElement(
+            'div',
+            null,
+            _react2['default'].createElement(
+              'div',
+              { className: 'logo hidden-xs' },
+              _react2['default'].createElement(
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
+              ),
+              ' ',
+              _react2['default'].createElement('br', null),
+              _react2['default'].createElement(
+                'span',
+                null,
+                'Интерактивное агентство'
+              )
+            ),
+            _react2['default'].createElement(
+              'button',
+              { onClick: this._back },
+              _react2['default'].createElement(
+                'div',
+                null,
+                _react2['default'].createElement('i', { className: 'fa fa-angle-left' })
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                _react2['default'].createElement(
+                  'span',
+                  null,
+                  'к списку'
+                ),
+                _react2['default'].createElement(
+                  'span',
+                  null,
+                  'проектов'
+                )
+              )
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'hidden-xs' },
+            _react2['default'].createElement('div', { className: 'line animate' }),
+            _react2['default'].createElement(
+              'div',
+              { className: 'logo' },
+              _react2['default'].createElement(
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
+              ),
+              ' ',
+              _react2['default'].createElement('br', null),
+              _react2['default'].createElement(
+                'span',
+                null,
+                'Интерактивное агентство'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'contacts' },
+              _react2['default'].createElement(
+                'h3',
+                null,
+                '8 812 425 67 17'
+              ),
+              _react2['default'].createElement(
+                'p',
+                { className: 'transparent' },
+                'г. Санкт-Петербург'
+              )
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-loading' },
+          (0, _commonSpinner2['default'])()
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-cont' },
+          _react2['default'].createElement('div', { className: 'brand-bg' }),
+          _react2['default'].createElement('img', { className: 'logo', src: 'images/trans/logo.png', style: { position: 'relative', zIndex: 2, width: '10vw' }, alt: '' }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc' },
+            'Разработка сайта, печатной продукции, поддержка'
+          ),
+          _react2['default'].createElement(
+            'h2',
+            { id: 'case-title', style: { fontSize: '11vw' } },
+            'SPBTRD.RU'
+          ),
+          _react2['default'].createElement(
+            'div',
+            { id: 'hidden-resizer', style: { fontSize: '100px', position: 'absolute', visibility: 'hidden' } },
+            'SPBTRD.RU'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'main-desc' },
+            'Автономная некоммерческая организация «Дирекция по развитию транспортной системы Санкт-Петербурга и Ленинградской области»'
+          ),
+          _react2['default'].createElement('img', { src: 'images/trans/bg_mac.jpg', style: { marginTop: '-50vw' }, width: '100%', alt: '', className: 'bg-mac animate' }),
+          _react2['default'].createElement('div', { className: 'animate line', style: { marginTop: '-12vw' } }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc' },
+            'Строгий, динамичный дизайн в соответствии с фирменным стилем организации. Самая важная информация вынесена на первый экран.'
+          ),
+          _react2['default'].createElement('img', { src: 'images/trans/page1.png', className: 'animate', style: { marginTop: '-12vw', position: 'relative', zIndex: 2 }, width: '100%', alt: 'images/trans/page1.png' }),
+          _react2['default'].createElement('div', { className: 'animate line' }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc', style: { marginBottom: '-18vw' } },
+            'Удобная навигация по разделам с большим количеством контента'
+          ),
+          _react2['default'].createElement('img', { src: 'images/trans/ipad.jpg', style: { marginBottom: '-20vw' }, width: '100%', className: 'trans-ipad animate', alt: '' }),
+          _react2['default'].createElement(Slider3d, { pics: ['trans/slider/1.jpg', 'trans/slider/2.jpg', 'trans/slider/3.jpg', 'trans/slider/4.jpg'], type: 'vertical' }),
+          _react2['default'].createElement('div', { className: 'animate line', style: { marginTop: 0 } }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc', style: { marginNBottom: 0 } },
+            '"UI Kit" для каждого проекта'
+          ),
+          _react2['default'].createElement('img', { src: 'images/trans/page2.jpg', width: '100%', style: { marginBottom: '-30vw' }, className: 'trans-page2 animate', alt: '' }),
+          _react2['default'].createElement('div', { className: 'animate line' }),
+          _react2['default'].createElement(
+            'h3',
+            { className: 'animate' },
+            'Для этой компании мы сделали:'
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'we-made' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Интерактивный прототип'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '01'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Разработали сайт'
+              ),
+              _react2['default'].createElement(
+                'div',
+                { className: 'platform' },
+                _react2['default'].createElement(
                   'div',
                   null,
-                  _react2['default'].createElement(
-                    'h5',
-                    null,
-                    'Мы состоим в '
-                  ),
-                  _react2['default'].createElement('i', { className: 'icons specia' })
+                  _react2['default'].createElement('span', { className: 'icon-bitrix' })
+                ),
+                _react2['default'].createElement(
+                  'p',
+                  null,
+                  'Сайт разработан на платформе 1С-Битрикс'
                 )
               ),
+              _react2['default'].createElement(
+                'button',
+                { className: 'outline' },
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'http://spbtrd.ru/' },
+                  'Посетить сайт'
+                )
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '02'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'РАЗРАБОТАЛИ ПОЛИГРАФИЮ'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'Разработали дизайн печатной продукции: буклет, каталог, поздравительные открытки.'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '03'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'animate' },
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'ПОДДЕРЖКА ПРОЕКТА'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'Занимаемся развитием и техническим обслуживанием проекта.'
+              ),
+              _react2['default'].createElement(
+                'span',
+                null,
+                '04'
+              )
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'more' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'cont' },
+              moreProjects.slice(0, 4)
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'bottom-links' },
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Мы в социальных сетях'
+              ),
+              _react2['default'].createElement('div', { className: 'v-line' }),
+              _react2['default'].createElement(
+                'div',
+                { className: 'links' },
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://vk.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
+                )
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
               _react2['default'].createElement(
                 'div',
                 null,
                 _react2['default'].createElement(
                   'h5',
                   null,
-                  'Поделиться ссылкой'
+                  'Мы состоим в '
+                ),
+                _react2['default'].createElement('i', { className: 'icons specia' })
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Поделиться ссылкой'
+              ),
+              _react2['default'].createElement(
+                'div',
+                null,
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
                 ),
                 _react2['default'].createElement(
-                  'div',
+                  'a',
+                  { href: 'https://vk.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }, {
+    key: '_caseCommon',
+    value: function _caseCommon(work, moreProjects) {
+      return _react2['default'].createElement(
+        'section',
+        { className: 'scrollbar-macosx case-wrap' },
+        _react2['default'].createElement(
+          'div',
+          { className: 'heading' },
+          _react2['default'].createElement(
+            'div',
+            null,
+            _react2['default'].createElement(
+              'div',
+              { className: 'logo hidden-xs' },
+              _react2['default'].createElement(
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
+              ),
+              ' ',
+              _react2['default'].createElement('br', null),
+              _react2['default'].createElement(
+                'span',
+                null,
+                'Интерактивное агентство'
+              )
+            ),
+            _react2['default'].createElement(
+              'button',
+              { onClick: this._back },
+              _react2['default'].createElement(
+                'div',
+                null,
+                _react2['default'].createElement('i', { className: 'fa fa-angle-left' })
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                _react2['default'].createElement(
+                  'span',
                   null,
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://facebook.com/cloudmill', className: 'social-link' },
-                    _react2['default'].createElement('i', { className: 'fa fa-facebook' })
-                  ),
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://vk.com/cloudmill', className: 'social-link' },
-                    _react2['default'].createElement('i', { className: 'fa fa-vk' })
-                  ),
-                  _react2['default'].createElement(
-                    'a',
-                    { href: 'https://twitter.com/cloudmill', className: 'social-link' },
-                    _react2['default'].createElement('i', { className: 'fa fa-twitter' })
-                  )
+                  'к списку'
+                ),
+                _react2['default'].createElement(
+                  'span',
+                  null,
+                  'проектов'
+                )
+              )
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'hidden-xs' },
+            _react2['default'].createElement('div', { className: 'line animate' }),
+            _react2['default'].createElement(
+              'div',
+              { className: 'logo' },
+              _react2['default'].createElement(
+                _reactRouter.Link,
+                { to: '/' },
+                _react2['default'].createElement('i', { className: 'icons cloudmill' })
+              ),
+              ' ',
+              _react2['default'].createElement('br', null),
+              _react2['default'].createElement(
+                'span',
+                null,
+                'Интерактивное агентство'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'contacts' },
+              _react2['default'].createElement(
+                'h3',
+                null,
+                '8 812 425 67 17'
+              ),
+              _react2['default'].createElement(
+                'p',
+                { className: 'transparent' },
+                'г. Санкт-Петербург'
+              )
+            )
+          )
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-loading' },
+          (0, _commonSpinner2['default'])()
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'case-cont' },
+          _react2['default'].createElement('div', { className: 'brand-bg' }),
+          _react2['default'].createElement('img', { className: 'logo', src: 'images/' + work.logo, alt: '' }),
+          _react2['default'].createElement(
+            'p',
+            { className: 'desc' },
+            work.shortDesc
+          ),
+          _react2['default'].createElement(
+            'h2',
+            { id: 'case-title', style: { fontSize: work.headerSize } },
+            work.name
+          ),
+          _react2['default'].createElement(
+            'div',
+            { id: 'hidden-resizer', style: { fontSize: '100px', position: 'absolute', visibility: 'hidden' } },
+            work.name
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'main-desc' },
+            ' ',
+            work.desc,
+            ' '
+          ),
+          work.components.topPic ? topPic(work.components.topPic.img, work.components.topPic.marginBottom, work.components.topPic.desc) : null,
+          work.components.imageTop ? imageTop(work.components.imageTop.img, work.components.imageTop.desc) : null,
+          work.components.specialBg ? SpecialBg('images/' + work.components.specialBg.img, work.components.specialBg.shift, work.components.specialBg.top) : null,
+          work.components.laptop ? Laptop(work.components.laptop.img, work.components.laptop.line) : null,
+          work.components.slider3d ? _react2['default'].createElement(Slider3d, { pics: work.components.slider3d.pics, desc: work.components.slider3d.desc, type: work.components.slider3d.type }) : null,
+          work.components.screens ? Screens(work.components.screens.pic, work.components.screens.desc, work.components.screens.width, work.components.screens.marginTop) : null,
+          work.components.sliderFillWidth ? _react2['default'].createElement(SliderFullWidth, { items: work.components.sliderFillWidth.items, height: work.components.sliderFillWidth.height, desc: work.components.sliderFillWidth.desc }) : null,
+          work.components.iPadSlider ? _react2['default'].createElement(IPadSlider, { items: work.components.iPadSlider.pics, desc: work.components.iPadSlider.desc }) : null,
+          work.components.imageWithDesc ? ImageWithDesc(work.components.imageWithDesc.img, work.components.imageWithDesc.desc) : null,
+          work.components.elements ? Elements(work.components.elements.img, work.components.elements.desc, work.components.elements.marginBottom) : null,
+          work.components.imageWithDesc2 ? Elements(work.components.imageWithDesc2.img, work.components.imageWithDesc2.desc) : null,
+          work.components.imageWithDesc3 ? Elements(work.components.imageWithDesc3.img, work.components.imageWithDesc3.desc) : null,
+          work.components.macSlider ? _react2['default'].createElement(MacSlider, { items: work.components.macSlider.items, desc: work.components.macSlider.desc }) : null,
+          work.components.screensSkew ? ScreensSkew(work.components.screensSkew.pic, work.components.screensSkew.count, work.components.screensSkew.marginTop) : null,
+          work.weMade ? weMade(work) : null,
+          work.components.simpleText ? simpleText(work.components.simpleText.header, work.components.simpleText.text) : null,
+          _react2['default'].createElement('div', { className: 'animate line' }),
+          _react2['default'].createElement(
+            'div',
+            { className: 'more' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'cont' },
+              moreProjects.slice(0, 4)
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'bottom-links' },
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Мы в социальных сетях'
+              ),
+              _react2['default'].createElement('div', { className: 'v-line' }),
+              _react2['default'].createElement(
+                'div',
+                { className: 'links' },
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://vk.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
+                )
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'div',
+                null,
+                _react2['default'].createElement(
+                  'h5',
+                  null,
+                  'Мы состоим в '
+                ),
+                _react2['default'].createElement('i', { className: 'icons specia' })
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              null,
+              _react2['default'].createElement(
+                'h5',
+                null,
+                'Поделиться ссылкой'
+              ),
+              _react2['default'].createElement(
+                'div',
+                null,
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://facebook.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-facebook' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://vk.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-vk' })
+                ),
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://twitter.com/cloudmill', className: 'social-link' },
+                  _react2['default'].createElement('i', { className: 'fa fa-twitter' })
                 )
               )
             )
@@ -5516,6 +6214,154 @@ exports['default'] = [{
       desc: '',
       pic: 'veneta/screens.jpg',
       width: '100%'
+    }
+  }
+}, {
+  name: 'SPBTRD.RU',
+  alias: 'spbtrd',
+  type: 'web',
+  logo: 'trans/logo.png',
+  price: '250 000',
+  shortDesc: 'Разработка корпоративного сайта с каталогом продукции.',
+  desc: 'Компания занимается разработкой, производством и поставками сухих смесей и красок «Рунит», выполняет проектирование и реставрационные работы на объектах культурного наследия.',
+  pic: 'trans/main.jpg',
+  headerSize: '17vw',
+  weMade: [{
+    type: 'simple',
+    header: 'ИНТЕРАКТИВНЫЙ ПРОТОТИП',
+    text: 'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+  }, {
+    type: 'website',
+    header: 'РАЗРАБОТАЛИ САЙТ',
+    platform: 'bitrix',
+    link: 'http://google.ru'
+  }, {
+    type: 'simple',
+    header: 'ЕЩЕ КОЕ ЧТО',
+    text: 'В предпроектную подготовку входило разработка интерактивного прототипа'
+  }, {
+    type: 'simple',
+    header: 'И ПОСЛЕДНЕЕ',
+    text: 'Кучерявая тема входило разработка интерактивного прототипа'
+  }],
+  comp: [{
+    component: 'sliderFullWidth',
+    props: {
+      items: ['aton/slider/1.jpg', 'aton/slider/1.jpg', 'aton/slider/1.jpg'],
+      desc: 'Специально для проекта была выполнена фотосессия для каждой линейки продукции'
+    }
+  }, {
+    component: 'laptop',
+    props: {
+      items: ['aton/slider/1.jpg', 'aton/slider/1.jpg', 'aton/slider/1.jpg'],
+      props: {
+        img: 'runit/laptop.gif',
+        line: false
+      }
+    }
+  }],
+  components: {
+    laptop: {
+      img: 'runit/laptop.gif',
+      line: false
+    },
+    specialBg: {
+      img: 'runit/bg.jpg',
+      shift: '-100vh'
+    },
+    imageWithDesc: {
+      img: 'runit/laptop2.gif',
+      desc: 'Каталог продукции с фильтром для удобсвта пользователей'
+    },
+    elements: {
+      img: 'runit/elements.jpg',
+      desc: 'Стилистика сайта, полностью соответствует корпоративным стандартам',
+      marginBottom: '-15vh'
+    },
+    screens: {
+      desc: '',
+      pic: 'runit/screens.jpg',
+      width: '100%',
+      marginTop: '-10vh'
+    },
+    screensSkew: {
+      count: 20,
+      pic: 'runit/screens_skew.jpg',
+      marginTop: '5vh'
+    }
+  }
+}, {
+  name: 'Третейский суд',
+  alias: 'court',
+  type: 'web',
+  logo: 'court/logo.png',
+  price: '350 000',
+  shortDesc: 'Разработка корпоративного сайта с каталогом продукции.',
+  desc: 'Компания занимается разработкой, производством и поставками сухих смесей и красок «Рунит», выполняет проектирование и реставрационные работы на объектах культурного наследия.',
+  pic: 'court/main.jpg',
+  headerSize: '17vw',
+  weMade: [{
+    type: 'simple',
+    header: 'ИНТЕРАКТИВНЫЙ ПРОТОТИП',
+    text: 'В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта'
+  }, {
+    type: 'website',
+    header: 'РАЗРАБОТАЛИ САЙТ',
+    platform: 'bitrix',
+    link: 'http://google.ru'
+  }, {
+    type: 'simple',
+    header: 'ЕЩЕ КОЕ ЧТО',
+    text: 'В предпроектную подготовку входило разработка интерактивного прототипа'
+  }, {
+    type: 'simple',
+    header: 'И ПОСЛЕДНЕЕ',
+    text: 'Кучерявая тема входило разработка интерактивного прототипа'
+  }],
+  comp: [{
+    component: 'sliderFullWidth',
+    props: {
+      items: ['aton/slider/1.jpg', 'aton/slider/1.jpg', 'aton/slider/1.jpg'],
+      desc: 'Специально для проекта была выполнена фотосессия для каждой линейки продукции'
+    }
+  }, {
+    component: 'laptop',
+    props: {
+      items: ['aton/slider/1.jpg', 'aton/slider/1.jpg', 'aton/slider/1.jpg'],
+      props: {
+        img: 'runit/laptop.gif',
+        line: false
+      }
+    }
+  }],
+  components: {
+    laptop: {
+      img: 'runit/laptop.gif',
+      line: false
+    },
+    specialBg: {
+      img: 'runit/bg.jpg',
+      shift: '-100vh'
+    },
+    imageWithDesc: {
+      img: 'runit/laptop2.gif',
+      desc: 'Каталог продукции с фильтром для удобсвта пользователей'
+    },
+    elements: {
+      img: 'runit/elements.jpg',
+      desc: 'Стилистика сайта, полностью соответствует корпоративным стандартам',
+      marginBottom: '-15vh'
+    },
+    screens: {
+      desc: '',
+      pic: 'runit/screens.jpg',
+      width: '100%',
+      marginTop: '-10vh'
+    },
+    screensSkew: {
+      count: 20,
+      pic: 'runit/screens_skew.jpg',
+      marginTop: '5vh'
     }
   }
 }];

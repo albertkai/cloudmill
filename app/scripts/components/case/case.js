@@ -79,31 +79,37 @@ const weMade = (work)=>{
       <h3 className="animate">Для этой компании мы сделали:</h3>
 
       <div className="we-made">
-    <div className="animate">
-      <h5>Интерактивный прототип</h5>
-      <p>В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной структуры сайта</p>
-      <span>01</span>
-    </div>
+        <div className="animate">
+          <h5>Интерактивный прототип</h5>
 
-    <div className="animate">
-      <h5>Разработали сайт</h5>
-      <div className="platform">
-        <div><span className="icon-bitrix"></span></div>
-        <p>Сайт разработан на платформе 1С-Битрикс</p>
+          <p>В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной
+            структуры сайта</p>
+          <span>01</span>
+        </div>
+
+        <div className="animate">
+          <h5>Разработали сайт</h5>
+
+          <div className="platform">
+            <div><span className="icon-bitrix"></span></div>
+            <p>Сайт разработан на платформе 1С-Битрикс</p>
+          </div>
+          <button className="outline">Посетить сайт</button>
+          <span>02</span>
+        </div>
+
+        <div className="animate">
+          {work.alias === 'setl' ? (<h5>Поддержка проекта</h5>) : (<h5>Провели фотосессию</h5>)}
+          {work.alias === 'setl' ? (<p>Занимаемся развитием и техническим обслуживанием проекта.</p>) : (
+            <p>В процессе разработки появилась необходимость в качественных фото материалах</p>)}
+          <span>03</span>
+        </div>
+
+        {work.alias === 'setl' ? null : (<div className="animate"><h5>Запустили рекламную кампанию</h5>
+
+          <p>Мы написали тексты и провели комплекс мер по продвижению сайта</p><span>04</span></div>)}
+
       </div>
-      <button className="outline">Посетить сайт</button>
-      <span>02</span>
-    </div>
-
-    <div className="animate">
-      {work.alias === 'setl' ? (<h5>Поддержка проекта</h5>) : (<h5>Провели фотосессию</h5>)}
-      {work.alias === 'setl' ? (<p>Занимаемся развитием и техническим обслуживанием проекта.</p>) : (<p>В процессе разработки появилась необходимость в качественных фото материалах</p>)}
-      <span>03</span>
-    </div>
-
-    {work.alias === 'setl' ? null : (<div className="animate"><h5>Запустили рекламную кампанию</h5><p>Мы написали тексты и провели комплекс мер по продвижению сайта</p><span>04</span></div>)}
-
-    </div>
     </div>
   )
 }
@@ -503,7 +509,8 @@ export default class extends React.Component {
     this.unsubscribe = this.props.store.subscribe(()=>{
       this.forceUpdate()
     })
-    $('.animate').addClass('_animate-from')
+    $('.animate').addClass('_animate-from');
+    $('.animate-3d').addClass('_animate-from-3d');
     $('.scrollbar-macosx').scrollbar()
     $('.animate').waypoint(function(dir){
       if (dir === 'down') {
@@ -514,9 +521,26 @@ export default class extends React.Component {
       context: '#case .scroll-content',
       offset: $(window).height() / 1.5
     });
+    $('.animate-3d').waypoint(function(dir){
+      if (dir === 'down') {
+        console.log($(this.element))
+        $(this.element).removeClass('_animate-from-3d')
+      }
+    }, {
+      context: '#case .scroll-content',
+      offset: $(window).height() / 1.5
+    });
     $('.animate').waypoint(function(dir){
       if (dir === 'up') {
         $(this.element).addClass('_animate-from')
+      }
+    }, {
+      context: '#case .scroll-content',
+      offset: $(window).height() / 2
+    });
+    $('.animate-3d').waypoint(function(dir){
+      if (dir === 'up') {
+        $(this.element).addClass('_animate-from-3d')
       }
     }, {
       context: '#case .scroll-content',
@@ -605,6 +629,8 @@ export default class extends React.Component {
 
   render() {
 
+    const name = this.props.params.name;
+
     let work = this.state.work
     let filteredWorks = this.props.store.getState().filteredWorks
     let index = (function(){
@@ -671,138 +697,448 @@ export default class extends React.Component {
 
         </aside>
 
-        <section className="scrollbar-macosx case-wrap">
-
-          <div className="heading">
-
-            <div>
-
-              <div className="logo hidden-xs">
-                <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
-                <span>Интерактивное агентство</span>
-              </div>
-
-              <button onClick={this._back}>
-                <div><i className="fa fa-angle-left"></i></div>
-                <p>
-                  <span>к списку</span>
-                  <span>проектов</span>
-                </p>
-              </button>
-
-            </div>
-            <div className="hidden-xs">
-
-              <div className="line animate"></div>
-
-              <div className="logo">
-                <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
-                <span>Интерактивное агентство</span>
-              </div>
-
-              <div className="contacts">
-                <h3>8 812 425 67 17</h3>
-                <p className="transparent">г. Санкт-Петербург</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div className="case-loading">{spinner()}</div>
-
-          <div className="case-cont">
-
-            <div className="brand-bg"></div>
-
-            <img className="logo" src={'images/' + work.logo} alt=""/>
-
-            <p className="desc">{ work.shortDesc }</p>
-
-            <h2 id="case-title" style={{fontSize: work.headerSize}}>{ work.name }</h2>
-            <div id="hidden-resizer" style={{fontSize: '100px', position: 'absolute', visibility: 'hidden'}}>{ work.name }</div>
-
-            <p className="main-desc"> { work.desc } </p>
-
-            {work.components.topPic ? topPic( work.components.topPic.img, work.components.topPic.marginBottom, work.components.topPic.desc) : null}
-
-            {work.components.imageTop ? imageTop( work.components.imageTop.img, work.components.imageTop.desc) : null}
-
-            {work.components.specialBg ? SpecialBg('images/' + work.components.specialBg.img, work.components.specialBg.shift, work.components.specialBg.top) : null}
-
-            {work.components.laptop ? Laptop(work.components.laptop.img, work.components.laptop.line) : null}
-
-            {work.components.slider3d ? (<Slider3d pics={work.components.slider3d.pics} desc={work.components.slider3d.desc} type={work.components.slider3d.type}/>) : null}
-
-            {work.components.screens ? Screens(work.components.screens.pic, work.components.screens.desc, work.components.screens.width, work.components.screens.marginTop) : null}
-
-            {work.components.sliderFillWidth ? (<SliderFullWidth items={work.components.sliderFillWidth.items} height={work.components.sliderFillWidth.height} desc={work.components.sliderFillWidth.desc}/>) : null}
-
-            {work.components.iPadSlider ? (<IPadSlider items={work.components.iPadSlider.pics} desc={work.components.iPadSlider.desc}/>) : null}
-
-            {work.components.imageWithDesc ? ImageWithDesc(work.components.imageWithDesc.img, work.components.imageWithDesc.desc) : null}
-
-            {work.components.elements ? Elements(work.components.elements.img, work.components.elements.desc, work.components.elements.marginBottom) : null}
-
-            {work.components.imageWithDesc2 ? Elements(work.components.imageWithDesc2.img, work.components.imageWithDesc2.desc) : null}
-
-            {work.components.imageWithDesc3 ? Elements(work.components.imageWithDesc3.img, work.components.imageWithDesc3.desc) : null}
-
-            {work.components.macSlider ? (<MacSlider items={work.components.macSlider.items} desc={work.components.macSlider.desc}/>) : null}
-
-            {work.components.screensSkew ? ScreensSkew(work.components.screensSkew.pic, work.components.screensSkew.count, work.components.screensSkew.marginTop) : null}
-
-            {work.weMade ? weMade(work) : null}
-
-            {work.components.simpleText ? simpleText(work.components.simpleText.header, work.components.simpleText.text) : null}
-
-            <div className="animate line"></div>
-
-            <div className="more">
-
-              <div className="cont">
-
-                {moreProjects.slice(0, 4)}
-
-              </div>
-
-            </div>
-
-            <div className="bottom-links">
-
-              <div>
-                <h5>Мы в социальных сетях</h5>
-                <div className="v-line"></div>
-                <div className="links">
-                  <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
-                  <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
-                  <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <h5>Мы состоим в </h5>
-                  <i className="icons specia"></i>
-                </div>
-              </div>
-              <div>
-                <h5>Поделиться ссылкой</h5>
-
-                <div>
-                  <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
-                  <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
-                  <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
+        {name === 'court' ? this._court(work, moreProjects) : name === 'spbtrd' ? this._trans(moreProjects) : this._caseCommon(work, moreProjects)}
 
       </div>
     );
+  }
+
+  _court(work, moreProjects) {
+    return (
+      <section className="scrollbar-macosx case-wrap">
+
+        <div className="heading">
+
+          <div>
+
+            <div className="logo hidden-xs">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <button onClick={this._back}>
+              <div><i className="fa fa-angle-left"></i></div>
+              <p>
+                <span>к списку</span>
+                <span>проектов</span>
+              </p>
+            </button>
+
+          </div>
+          <div className="hidden-xs">
+
+            <div className="line animate"></div>
+
+            <div className="logo">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <div className="contacts">
+              <h3>8 812 425 67 17</h3>
+              <p className="transparent">г. Санкт-Петербург</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="case-loading">{spinner()}</div>
+
+        <div className="case-cont" style={{position: 'relative'}}>
+
+          <div className="brand-bg"></div>
+
+          <img className="logo animate-3d" src={'images/court/logo.png'} style={{width: '20vw'}} alt=""/>
+
+          <p className="desc">Разработка сайта</p>
+
+          <h2 id="case-title" style={{fontSize: '9vw'}}>ТРЕТЕЙСКИЙ СУД НАП</h2>
+          <div id="hidden-resizer" style={{fontSize: '100px', position: 'absolute', visibility: 'hidden'}}>ТРЕТЕЙСКИЙ СУД НАП</div>
+
+          <p className="main-desc">Это современный, динамично развивающийся арбитражный институт, использующий передовые технологии.</p>
+
+          <div className="video">
+            <iframe src="https://player.vimeo.com/video/188806746?autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <p><a href="https://vimeo.com/188806746">NAP_presentation_cl</a> from <a href="https://vimeo.com/user58274879">CloudMill</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+          </div>
+
+          <img src="images/court/1.jpg" width="100%" alt=""/>
+          <img src="images/court/2.jpg" width="100%" alt=""/>
+          <img src="images/court/3_1.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/3_2.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/3_3.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/3_4.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/3_5.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/3_6.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/4_1.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/4_2.jpg" className="animate-3d" width="100%" alt=""/>
+          <img src="images/court/4_3.jpg" className="animate-3d" width="100%" alt=""/>
+
+          <div className="we-made">
+            <div className="animate">
+              <h5>Интерактивный прототип</h5>
+
+              <p>В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной
+                структуры сайта</p>
+              <span>01</span>
+            </div>
+
+            <div className="animate">
+              <h5>Разработали сайт</h5>
+
+              <div className="platform">
+                <div><span className="icon-bitrix"></span></div>
+                <p>Сайт разработан на платформе 1С-Битрикс</p>
+              </div>
+              <button className="outline"><a href="http://icarb.ru">Посетить сайт</a></button>
+              <span>02</span>
+            </div>
+
+            <div className="animate">
+              <h5>СДЕЛАЛИ АДАПТИВ</h5>
+              <p>Сайт адаптируется под разные разрешения экрана пользователя.</p>
+              <span>03</span>
+            </div>
+
+            <div className="animate"><h5>ПОДДЕРЖКА ПРОЕКТА</h5>
+
+              <p>Занимаемся развитием и техническим обслуживанием проекта.</p><span>04</span></div>
+
+          </div>
+
+          <div className="more">
+
+            <div className="cont">
+
+              {moreProjects.slice(0, 4)}
+
+            </div>
+
+          </div>
+
+          <div className="bottom-links">
+
+            <div>
+              <h5>Мы в социальных сетях</h5>
+              <div className="v-line"></div>
+              <div className="links">
+                <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5>Мы состоим в </h5>
+                <i className="icons specia"></i>
+              </div>
+            </div>
+            <div>
+              <h5>Поделиться ссылкой</h5>
+
+              <div>
+                <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    )
+  }
+
+  _trans(moreProjects) {
+    return (
+      <section className="scrollbar-macosx case-wrap trans">
+
+        <div className="heading">
+
+          <div>
+
+            <div className="logo hidden-xs">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <button onClick={this._back}>
+              <div><i className="fa fa-angle-left"></i></div>
+              <p>
+                <span>к списку</span>
+                <span>проектов</span>
+              </p>
+            </button>
+
+          </div>
+          <div className="hidden-xs">
+
+            <div className="line animate"></div>
+
+            <div className="logo">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <div className="contacts">
+              <h3>8 812 425 67 17</h3>
+              <p className="transparent">г. Санкт-Петербург</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="case-loading">{spinner()}</div>
+
+        <div className="case-cont">
+
+          <div className="brand-bg"></div>
+
+          <img className="logo" src={'images/trans/logo.png'} style={{position: 'relative', zIndex: 2, width: '10vw'}} alt=""/>
+
+          <p className="desc">Разработка сайта, печатной продукции, поддержка</p>
+
+          <h2 id="case-title" style={{fontSize: '11vw'}}>SPBTRD.RU</h2>
+          <div id="hidden-resizer" style={{fontSize: '100px', position: 'absolute', visibility: 'hidden'}}>SPBTRD.RU</div>
+
+          <p className="main-desc">Автономная некоммерческая организация «Дирекция по развитию транспортной системы Санкт-Петербурга и Ленинградской области»</p>
+
+          <img src="images/trans/bg_mac.jpg" style={{marginTop: '-50vw'}} width="100%" alt="" className="bg-mac animate"/>
+
+          <div className="animate line" style={{marginTop: '-12vw'}}></div>
+          <p className="desc">Строгий, динамичный дизайн в соответствии с фирменным стилем организации. Самая важная информация вынесена на первый экран.</p>
+
+          <img src="images/trans/page1.png" className="animate" style={{marginTop: '-12vw', position: 'relative', zIndex: 2}} width="100%" alt="images/trans/page1.png"/>
+
+          <div className="animate line"></div>
+          <p className="desc" style={{marginBottom: '-18vw'}}>Удобная навигация по разделам с большим количеством контента</p>
+
+          <img src="images/trans/ipad.jpg" style={{marginBottom: '-20vw'}} width="100%" className="trans-ipad animate" alt=""/>
+
+          <Slider3d pics={['trans/slider/1.jpg', 'trans/slider/2.jpg', 'trans/slider/3.jpg', 'trans/slider/4.jpg']} type="vertical"/>
+
+          <div className="animate line" style={{marginTop: 0}}></div>
+          <p className="desc" style={{marginNBottom: 0}}>"UI Kit" для каждого проекта</p>
+
+          <img src="images/trans/page2.jpg" width="100%" style={{marginBottom: '-30vw'}} className="trans-page2 animate" alt=""/>
+
+          <div className="animate line"></div>
+
+          <h3 className="animate">Для этой компании мы сделали:</h3>
+
+          <div className="we-made">
+            <div className="animate">
+              <h5>Интерактивный прототип</h5>
+
+              <p>В предпроектную подготовку входило разработка интерактивного прототипа, для обеспечения продуманной
+                структуры сайта</p>
+              <span>01</span>
+            </div>
+
+            <div className="animate">
+              <h5>Разработали сайт</h5>
+
+              <div className="platform">
+                <div><span className="icon-bitrix"></span></div>
+                <p>Сайт разработан на платформе 1С-Битрикс</p>
+              </div>
+              <button className="outline"><a href="http://spbtrd.ru/">Посетить сайт</a></button>
+              <span>02</span>
+            </div>
+
+            <div className="animate">
+              <h5>РАЗРАБОТАЛИ ПОЛИГРАФИЮ</h5>
+              <p>Разработали дизайн печатной продукции: буклет, каталог, поздравительные открытки.</p>
+              <span>03</span>
+            </div>
+
+            <div className="animate"><h5>ПОДДЕРЖКА ПРОЕКТА</h5>
+
+            <p>Занимаемся развитием и техническим обслуживанием проекта.</p><span>04</span></div>
+
+          </div>
+
+          <div className="more">
+
+            <div className="cont">
+
+              {moreProjects.slice(0, 4)}
+
+            </div>
+
+          </div>
+
+          <div className="bottom-links">
+
+            <div>
+              <h5>Мы в социальных сетях</h5>
+              <div className="v-line"></div>
+              <div className="links">
+                <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5>Мы состоим в </h5>
+                <i className="icons specia"></i>
+              </div>
+            </div>
+            <div>
+              <h5>Поделиться ссылкой</h5>
+
+              <div>
+                <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    )
+  }
+
+  _caseCommon(work, moreProjects) {
+    return (
+      <section className="scrollbar-macosx case-wrap">
+
+        <div className="heading">
+
+          <div>
+
+            <div className="logo hidden-xs">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <button onClick={this._back}>
+              <div><i className="fa fa-angle-left"></i></div>
+              <p>
+                <span>к списку</span>
+                <span>проектов</span>
+              </p>
+            </button>
+
+          </div>
+          <div className="hidden-xs">
+
+            <div className="line animate"></div>
+
+            <div className="logo">
+              <Link to="/"><i className="icons cloudmill"></i></Link> <br/>
+              <span>Интерактивное агентство</span>
+            </div>
+
+            <div className="contacts">
+              <h3>8 812 425 67 17</h3>
+              <p className="transparent">г. Санкт-Петербург</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="case-loading">{spinner()}</div>
+
+        <div className="case-cont">
+
+          <div className="brand-bg"></div>
+
+          <img className="logo" src={'images/' + work.logo} alt=""/>
+
+          <p className="desc">{ work.shortDesc }</p>
+
+          <h2 id="case-title" style={{fontSize: work.headerSize}}>{ work.name }</h2>
+          <div id="hidden-resizer" style={{fontSize: '100px', position: 'absolute', visibility: 'hidden'}}>{ work.name }</div>
+
+          <p className="main-desc"> { work.desc } </p>
+
+          {work.components.topPic ? topPic( work.components.topPic.img, work.components.topPic.marginBottom, work.components.topPic.desc) : null}
+
+          {work.components.imageTop ? imageTop( work.components.imageTop.img, work.components.imageTop.desc) : null}
+
+          {work.components.specialBg ? SpecialBg('images/' + work.components.specialBg.img, work.components.specialBg.shift, work.components.specialBg.top) : null}
+
+          {work.components.laptop ? Laptop(work.components.laptop.img, work.components.laptop.line) : null}
+
+          {work.components.slider3d ? (<Slider3d pics={work.components.slider3d.pics} desc={work.components.slider3d.desc} type={work.components.slider3d.type}/>) : null}
+
+          {work.components.screens ? Screens(work.components.screens.pic, work.components.screens.desc, work.components.screens.width, work.components.screens.marginTop) : null}
+
+          {work.components.sliderFillWidth ? (<SliderFullWidth items={work.components.sliderFillWidth.items} height={work.components.sliderFillWidth.height} desc={work.components.sliderFillWidth.desc}/>) : null}
+
+          {work.components.iPadSlider ? (<IPadSlider items={work.components.iPadSlider.pics} desc={work.components.iPadSlider.desc}/>) : null}
+
+          {work.components.imageWithDesc ? ImageWithDesc(work.components.imageWithDesc.img, work.components.imageWithDesc.desc) : null}
+
+          {work.components.elements ? Elements(work.components.elements.img, work.components.elements.desc, work.components.elements.marginBottom) : null}
+
+          {work.components.imageWithDesc2 ? Elements(work.components.imageWithDesc2.img, work.components.imageWithDesc2.desc) : null}
+
+          {work.components.imageWithDesc3 ? Elements(work.components.imageWithDesc3.img, work.components.imageWithDesc3.desc) : null}
+
+          {work.components.macSlider ? (<MacSlider items={work.components.macSlider.items} desc={work.components.macSlider.desc}/>) : null}
+
+          {work.components.screensSkew ? ScreensSkew(work.components.screensSkew.pic, work.components.screensSkew.count, work.components.screensSkew.marginTop) : null}
+
+          {work.weMade ? weMade(work) : null}
+
+          {work.components.simpleText ? simpleText(work.components.simpleText.header, work.components.simpleText.text) : null}
+
+          <div className="animate line"></div>
+
+          <div className="more">
+
+            <div className="cont">
+
+              {moreProjects.slice(0, 4)}
+
+            </div>
+
+          </div>
+
+          <div className="bottom-links">
+
+            <div>
+              <h5>Мы в социальных сетях</h5>
+              <div className="v-line"></div>
+              <div className="links">
+                <a href="https://facebook.com/cloudmill"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5>Мы состоим в </h5>
+                <i className="icons specia"></i>
+              </div>
+            </div>
+            <div>
+              <h5>Поделиться ссылкой</h5>
+
+              <div>
+                <a href="https://facebook.com/cloudmill" className="social-link"><i className="fa fa-facebook"></i></a>
+                <a href="https://vk.com/cloudmill" className="social-link"><i className="fa fa-vk"></i></a>
+                <a href="https://twitter.com/cloudmill" className="social-link"><i className="fa fa-twitter"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    )
   }
 
 }
